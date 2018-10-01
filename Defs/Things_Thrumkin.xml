@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DeciduousTreeBase">
+    <defName>Plant_TreeGhostAsh</defName>
+    <label>ghost ash tree</label>
+    <description>A rare tree that has not been successfully cultivated yet. Only thrumkin seem to possess the ability to grow these wherever they want.</description>
+    <graphicData>
+      <texPath>Things/Plant/TreeGhostAsh</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Nutrition>1</Nutrition>
+    </statBases>
+    <ingestible />
+    <plant>
+			<growDays>18</growDays>
+			<leaflessGraphicPath>Things/Plant/TreeGhostAsh_Leafless</leaflessGraphicPath>
+			<harvestWork>650</harvestWork>
+      <harvestYield>32</harvestYield>
+      <wildClusterWeight>35</wildClusterWeight>
+      <harvestedThingDef>WoodLog_GhostAsh</harvestedThingDef>
+      <mustBeWildToSow>false</mustBeWildToSow>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceVerbBase">
+    <defName>WoodLog_GhostAsh</defName>
+    <label>ghost ash wood</label>
+    <description>Wood from the ghost ash tree. It's a soft, beautiful wood, quite useful for decoration, but bad as a material for armor, weapons or construction. These properties make it undesirable for many people, allowing it to stay afforadable and not attract raiders as much. 
+    
+Only thrumkin know how to sow ghost ash trees.</description>
+    <graphicData>
+      <texPath>Things/Items/Resource/WoodLog_GhostAsh</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <equippedAngleOffset>-20</equippedAngleOffset>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Wood_Drop</soundDrop>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>0.4</Mass> 
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <StuffPower_Armor_Sharp>0.44</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.64</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.8</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>8</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>0.35</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.7</BluntDamageMultiplier>
+    </statBases>
+    <stuffProps>
+      <stuffAdjective>ghost ash</stuffAdjective>
+      <categories>
+        <li>Woody</li>
+      </categories>
+      <commonality>0.2</commonality>
+      <color>(133,127,113)</color>
+      <constructEffect>ConstructWood</constructEffect>
+      <appearance>Planks</appearance>
+      <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+      <statOffsets>
+        <Beauty>5</Beauty>
+      </statOffsets>
+      <statFactors>
+        <MaxHitPoints>0.4</MaxHitPoints>
+        <Beauty>2</Beauty>
+        <Flammability>1</Flammability>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <DoorOpenSpeed>1.2</DoorOpenSpeed>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <tools>
+      <li>
+        <label>log</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+	<TerrainDef  ParentName="FloorBase">
+		<defName>GhostAshFloor</defName>
+		<label>ghost ash floor</label>
+		<renderPrecedence>250</renderPrecedence>
+		<description>Ghost ash flooring for that warm, it's beautiful to look at, but just like wood very flammable.</description>
+		<texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+		<burnedDef>BurnedWoodPlankFloor</burnedDef>
+		<color>(133,127,113)</color>
+		<statBases>
+			<WorkToBuild>125</WorkToBuild>
+			<Flammability>0.27</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+		<costList>
+			<WoodLog_GhostAsh>6</WoodLog_GhostAsh>
+		</costList>
+		<constructEffect>ConstructWood</constructEffect>
+	</TerrainDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>Thrumkin_Crossbow</defName>
+    <label>crossbow</label>
+    <description>A powerful crossbow. Fires a heavy bolt long distances.</description>
+    <graphicData>
+      <texPath>Things/Items/Thrumkin_Crossbow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <costList>
+      <WoodLog>50</WoodLog>
+      <Steel>25</Steel>
+    </costList>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>5.0</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>NeolithicThrumkinRanged</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Thrumkin_Crossbow_Bolt</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>28</range>
+        <soundCast>Bow_Large</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>Greatbow</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Thrumkin_Crossbow_Bolt</defName>
+    <label>crossbow bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <armorPenetrationBase>0.20</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

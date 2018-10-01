@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "WoodLog"]</xpath>
+		  <value>
+			<socialPropernessMatters>true</socialPropernessMatters>
+			<ingestible>
+			  <foodType>Tree</foodType>
+			  <maxNumToIngestAtOnce>30</maxNumToIngestAtOnce>
+			  <optimalityOffsetHumanlikes>-25</optimalityOffsetHumanlikes>
+			  <ingestEffect>EatVegetarian</ingestEffect>
+			  <ingestSound>RawVegetable_Eat</ingestSound>
+			  <preferability>RawBad</preferability>
+			  <baseIngestTicks>1200</baseIngestTicks>
+			  <specialThoughtDirect>AteWood</specialThoughtDirect>
+			  <outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+				  <hediffDef>AteWoodHediff</hediffDef>
+				  <severity>1.0</severity>
+				</li>
+			  </outcomeDoers>
+			</ingestible>
+		  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "WoodLog"]/statBases</xpath>
+		  <value>
+			<Nutrition>0.05</Nutrition>
+		  </value>
+	</Operation>
+	
+	<!--<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "RoyalBed" or defName = "HospitalBed"]/building/bed_showSleeperBody</xpath>
+		  <value>
+			<bed_showSleeperBody>true</bed_showSleeperBody>
+		  </value>
+	</Operation>-->
+
+</Patch>

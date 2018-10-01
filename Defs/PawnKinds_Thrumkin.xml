@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PawnKindDef Abstract="True" Name="BaseThrumkinPawnKind">
+    <race>Thrumkin</race>
+    <combatPower>45</combatPower>
+    <baseRecruitDifficulty>0.25</baseRecruitDifficulty>
+    <isFighter>false</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+  </PawnKindDef>
+
+  <PawnKindDef Name="ThrumkinTribesperson" ParentName="BaseThrumkinPawnKind">
+    <defName>Thrumkin_Tribesperson</defName>
+    <label>member</label>
+    <defaultFactionType>ThrumkinPlayerTribe</defaultFactionType>
+	<backstoryCategories>
+	  <li>Thrumkin</li>
+	  <li>Tribal</li>
+	</backstoryCategories>
+    <apparelTags>
+      <li>Neolithic</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>0</min>
+      <max>200</max>
+    </apparelMoney>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+  </PawnKindDef>
+  
+  <PawnKindDef>
+    <defName>Thrumkin_Slave</defName>
+    <label>thrumkin slave</label>
+    <combatPower>30</combatPower>
+    <race>Thrumkin</race>
+    <baseRecruitDifficulty>0.30</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>Thrumkin</li>
+      <li>Tribal</li>
+    </backstoryCategories>
+    <defaultFactionType>OutlanderCivil</defaultFactionType>
+    <itemQuality>Poor</itemQuality>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <isFighter>false</isFighter>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <gearHealthRange>
+      <min>0.2</min>
+      <max>0.8</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>0</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <techHediffsChance>0</techHediffsChance>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <invNutrition>2</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinTribesperson">
+    <defName>Thrumkin_Refugee</defName>
+    <label>member</label>
+    <defaultFactionType>ThrumkinTribe</defaultFactionType>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinTribesperson">
+    <defName>Thrumkin_Wanderer</defName>
+    <label>member</label>
+    <defaultFactionType>ThrumkinTribe</defaultFactionType>
+    <apparelMoney>
+      <min>400</min>
+      <max>600</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_Duster</li>
+    </apparelRequired>
+  </PawnKindDef>
+
+  <PawnKindDef Name="ThrumkinTribalBase" Abstract="True">
+    <race>Thrumkin</race>
+    <defaultFactionType>ThrumkinTribe</defaultFactionType>
+    <backstoryCategories>
+      <li>Thrumkin</li>
+      <li>Tribal</li>
+    </backstoryCategories>
+    <maxGenerationAge>120</maxGenerationAge>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <invNutrition>4</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <apparelTags>
+      <li>Neolithic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <!-- Poverty tier - penitent -->
+
+  <PawnKindDef ParentName="ThrumkinTribalBase">
+    <defName>Thrumkin_Penitent</defName>
+    <label>penitent</label>
+    <combatPower>45</combatPower>
+    <chemicalAddictionChance>0.04</chemicalAddictionChance>
+    <invNutrition>1</invNutrition>
+    <itemQuality>Poor</itemQuality>
+    <apparelMoney>
+      <min>50</min>
+      <max>100</max>
+    </apparelMoney>
+    <techHediffsMoney>
+      <min>50</min>
+      <max>50</max>
+    </techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.15</techHediffsChance>
+  </PawnKindDef>
+
+  <!-- Low tier - archer -->
+
+  <PawnKindDef ParentName="ThrumkinTribalBase">
+		<defName>Thrumkin_Archer</defName>
+		<label>archer</label>
+    <combatPower>60</combatPower>
+    <itemQuality>Normal</itemQuality>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <weaponMoney>
+			<min>80</min>
+			<max>160</max>
+		</weaponMoney>
+		<weaponTags>
+      <li>NeolithicRangedDecent</li>
+		</weaponTags>
+    <techHediffsMoney>
+      <min>50</min>
+      <max>50</max>
+    </techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.03</techHediffsChance>
+	</PawnKindDef>
+
+  <!-- Mid tier - warrior, hunter, trader -->
+  
+  <PawnKindDef ParentName="ThrumkinTribalBase">
+    <defName>Thrumkin_Warrior</defName>
+    <label>warrior</label>
+    <combatPower>90</combatPower>
+    <itemQuality>Normal</itemQuality>
+    <canBeSapper>true</canBeSapper>
+    <apparelMoney>
+      <min>200</min>
+      <max>400</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_WarVeil</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>150</min>
+      <max>150</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeDecent</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinTribalBase" Name="Thrumkin_Hunter">
+    <defName>Thrumkin_Hunter</defName>
+    <label>hunter</label>
+    <combatPower>90</combatPower>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>200</min>
+      <max>300</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_WarVeil</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>175</min>
+      <max>250</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>NeolithicThrumkinRanged</li>
+      <li>NeolithicRangedHeavy</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="Thrumkin_Hunter">
+    <defName>Thrumkin_Trader</defName>
+    <label>trader</label>
+    <trader>true</trader>
+    <apparelRequired Inherit="False">
+      <li>Apparel_TribalHeaddress</li>
+    </apparelRequired>
+  </PawnKindDef>
+
+  <!-- High tier - berserker, heavy archer, chief melee, chief ranged -->
+
+  <PawnKindDef ParentName="ThrumkinTribalBase">
+    <defName>Thrumkin_Berserker</defName>
+    <label>berserker</label>
+    <combatPower>120</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <apparelMoney>
+      <min>300</min>
+      <max>650</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_WarMask</li>
+      <li>Apparel_PlateArmor</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>300</min>
+      <max>400</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeAdvanced</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinTribalBase">
+    <defName>Thrumkin_HeavyArcher</defName>
+    <label>heavy archer</label>
+    <combatPower>120</combatPower>
+    <apparelMoney>
+      <min>300</min>
+      <max>650</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_PlateArmor</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>250</min>
+      <max>350</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>NeolithicThrumkinRanged</li>
+      <li>NeolithicRangedHeavy</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinTribalBase" Name="ThrumkinElderBase" Abstract="True">
+    <defName>Thrumkin_ElderMelee</defName>
+    <combatPower>150</combatPower>
+    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
+    <minGenerationAge>30</minGenerationAge>
+    <maxGenerationAge>999</maxGenerationAge>
+    <itemQuality>Good</itemQuality>
+    <canBeSapper>true</canBeSapper>
+    <apparelMoney>
+      <min>650</min>
+      <max>950</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_TribalHeaddress</li>
+      <li>Apparel_PlateArmor</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>500</min>
+      <max>1000</max>
+    </weaponMoney>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ThrumkinElderBase">
+    <defName>Thrumkin_ElderMelee</defName>
+    <label>elder warrior</label>
+    <weaponTags>
+      <li>NeolithicMeleeAdvanced</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+	<PawnKindDef ParentName="ThrumkinElderBase">
+		<defName>Thrumkin_ElderRanged</defName>
+		<label>elder archer</label>
+		<weaponTags>
+			<li>NeolithicThrumkinRanged</li>
+		</weaponTags>
+	</PawnKindDef>
+
+  <PawnKindDef ParentName="ThrumkinElderBase">
+    <defName>Thrumkin_GrandElder</defName>
+    <label>grand elder</label>
+    <factionLeader>true</factionLeader>
+    <apparelMoney>
+      <min>700</min>
+      <max>1200</max>
+    </apparelMoney>
+    <weaponMoney>
+      <min>900</min>
+      <max>1200</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeAdvanced</li>
+      <li>MedievalMeleeAdvanced</li>
+      <li>NeolithicThrumkinRanged</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+</Defs>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>RemoveHornThrumkin</defName>
+    <label>remove thrumbo horn</label>
+    <description>Remove thrumbo horn.</description>
+    <workerClass>SyrThrumkin.Recipe_RemoveHornThrumkin</workerClass>
+    <jobString>Removing thrumbo horn.</jobString>
+    <workAmount>2000</workAmount>
+    <surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallWoodenHoof</defName>
+    <label>install wooden hoof</label>
+    <description>Install a wooden hoof.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing wooden hoof.</jobString>
+    <workAmount>1000</workAmount>
+    <surgerySuccessChanceFactor>1.40</surgerySuccessChanceFactor>
+    <skillRequirements>
+      <Medicine>3</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Hoof</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>WoodenHoof</addsHediff>
+  </RecipeDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>WoodenHoof</defName>
+    <label>wooden hoof</label>
+    <labelNoun>a wooden hoof</labelNoun>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.80</partEfficiency>
+      <betterThanNatural>false</betterThanNatural>
+    </addedPartProps>
+    <spawnThingOnRemoved>WoodLog</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallHornThrumkin</defName>
+    <label>install thrumbo horn</label>
+    <description>Install a thrumbo horn.</description>
+    <workerClass>Recipe_InstallNaturalBodyPart</workerClass>
+    <jobString>Installing thrumbo horn.</jobString>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ThrumboHorn</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>ThrumboHorn</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>HornThrumkin</li>
+    </appliedOnFixedBodyParts>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallSteelThrumkinHorn</defName>
+    <label>install steel horn</label>
+    <description>Install a steel horn.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing steel horn.</jobString>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SteelThrumkinHorn</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>SteelThrumkinHorn</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>HornThrumkin</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>SteelThrumkinHorn</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallEnhancementThrumkinHorn</defName>
+    <label>install horn enhancement</label>
+    <description>Install horn enhancement.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing horn enhancement.</jobString>
+    <workAmount>3700</workAmount>
+    <skillRequirements>
+      <Medicine>8</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EnhancementThrumkinHorn</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>EnhancementThrumkinHorn</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>HornThrumkin</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>EnhancementThrumkinHorn</addsHediff>
+  </RecipeDef>
+  
+</Defs>
