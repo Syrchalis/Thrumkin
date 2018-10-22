@@ -69,6 +69,14 @@ namespace SyrThrumkin
                 {
                     __result += 1;
                 }
+                if (__result < QualityCategory.Awful)
+                {
+                    __result = QualityCategory.Awful;
+                }
+                else if (__result > QualityCategory.Legendary)
+                {
+                    __result = QualityCategory.Legendary;
+                }
             }
         }
     }
@@ -80,10 +88,10 @@ namespace SyrThrumkin
         public static void IngestedCalculateAmounts_Postfix(Thing __instance, Pawn ingester, float nutritionWanted, ref float nutritionIngested)
         {
             
-            if (ingester.def == ThrumkinDefOf.Thrumkin)
+            if (ingester?.def != null && __instance?.def?.ingestible != null && ingester.def == ThrumkinDefOf.Thrumkin)
             {
                 CompIngredients compIngr = __instance.TryGetComp<CompIngredients>();
-                if (compIngr != null)
+                if (compIngr?.ingredients != null)
                 {
                     bool meat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) != FoodTypeFlags.None);
                     bool animalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
@@ -131,10 +139,10 @@ namespace SyrThrumkin
         [HarmonyPostfix]
         public static void FoodOptimality_Postfix(ref float __result, Pawn eater, Thing foodSource)
         {
-            if (eater?.def != null && foodSource?.def != null && eater.def == ThrumkinDefOf.Thrumkin)
+            if (eater?.def != null && foodSource?.def?.ingestible != null && eater.def == ThrumkinDefOf.Thrumkin)
             {
                 CompIngredients compIngr = foodSource.TryGetComp<CompIngredients>();
-                if (compIngr != null)
+                if (compIngr?.ingredients != null)
                 {
                     bool meat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) != FoodTypeFlags.None);
                     bool animalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
@@ -146,7 +154,7 @@ namespace SyrThrumkin
                     }
                     else if (animalP && !nonAnimalP)
                     {
-                        __result += 20;
+                        __result += 40;
                     }
                     else if (meat && !nonMeat)
                     {
@@ -154,7 +162,7 @@ namespace SyrThrumkin
                     }
                     else if (animalP && nonAnimalP)
                     {
-                        __result += 10;
+                        __result += 20;
                     }
                     else if (meat && nonMeat)
                     {
@@ -169,7 +177,7 @@ namespace SyrThrumkin
                     }
                     else if ((foodSource.def.ingestible.foodType & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None)
                     {
-                        __result += 20;
+                        __result += 30;
                     }
                 }
             }
@@ -396,27 +404,22 @@ namespace SyrThrumkin
                     string text = recipient.KindLabelIndefinite();
                     if (recipient.Name != null)
                     {
-                        Messages.Message("ThrumkinThrumboTameNameSuccess".Translate(new object[]
-                        {
+                        Messages.Message("ThrumkinThrumboTameNameSuccess".Translate(
                             initiator.LabelShort,
                             text,
                             recipient.Name.ToStringFull
-                        }).AdjustedFor(recipient, "PAWN"), recipient, MessageTypeDefOf.PositiveEvent, true);
+                        ).AdjustedFor(recipient, "PAWN"), recipient, MessageTypeDefOf.PositiveEvent, true);
                     }
                     else
                     {
-                        Messages.Message("ThrumkinThrumboTameSuccess".Translate(new object[]
-                        {
+                        Messages.Message("ThrumkinThrumboTameSuccess".Translate(
                             initiator.LabelShort,
-                            text,
-                        }), recipient, MessageTypeDefOf.PositiveEvent, true);
+                            text
+                        ), recipient, MessageTypeDefOf.PositiveEvent, true);
                     }
                     if (initiator.Spawned && recipient.Spawned)
                     {
-                        MoteMaker.ThrowText(((initiator.DrawPos + recipient.DrawPos) / 2f) + new Vector3(0f, 0f, 1f), initiator.Map, "TextMote_TameSuccess".Translate(new object[]
-                        {
-                            "25%"
-                        }), 8f);
+                        MoteMaker.ThrowText(((initiator.DrawPos + recipient.DrawPos) / 2f) + new Vector3(0f, 0f, 1f), initiator.Map, "TextMote_TameSuccess".Translate("25%"), 8f);
                     }
                 }
             }

@@ -27,6 +27,60 @@
   </RecipeDef>
 
   <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallThrumkinTail</defName>
+    <label>replace lost tail</label>
+    <description>Replace a lost tail.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Replacing a lost tail.</jobString>
+    <workAmount>1300</workAmount>
+    <surgerySuccessChanceFactor>1.40</surgerySuccessChanceFactor>
+    <skillRequirements>
+      <Medicine>3</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Tail</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>ThrumkinTail</addsHediff>
+  </RecipeDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ThrumkinTail</defName>
+    <label>replaced tail</label>
+    <labelNoun>a replaced tail</labelNoun>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+      <betterThanNatural>false</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallWoodenHoof</defName>
     <label>install wooden hoof</label>
     <description>Install a wooden hoof.</description>
@@ -75,7 +129,7 @@
     <labelNoun>a wooden hoof</labelNoun>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>0.80</partEfficiency>
+      <partEfficiency>0.90</partEfficiency>
       <betterThanNatural>false</betterThanNatural>
     </addedPartProps>
     <spawnThingOnRemoved>WoodLog</spawnThingOnRemoved>

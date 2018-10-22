@@ -411,6 +411,7 @@ They are not particularly skilled when it comes to building tools and using them
 			<PlantHarvestYield>1.2</PlantHarvestYield>
 			<ConstructionSpeed>1.25</ConstructionSpeed>
 			<UnskilledLaborSpeed>1.25</UnskilledLaborSpeed>
+			<CarryingCapacity>125</CarryingCapacity>
     </statBases>
     <tools>
       <li>
@@ -562,6 +563,7 @@ They are not particularly skilled when it comes to building tools and using them
 			<li>InstallHornThrumkin</li>
 			<li>InstallEnhancementThrumkinHorn</li>
 			<li>InstallSteelThrumkinHorn</li>
+			<li>InstallThrumkinTail</li>
 			<li>RemoveHornThrumkin</li>
     </recipes>
   </AlienRace.ThingDef_AlienRace>
