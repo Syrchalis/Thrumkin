@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +21,28 @@ namespace SyrThrumkin
         }
     }
 
+    [HarmonyPatch(typeof(PlantUtility), nameof(PlantUtility.GrowthSeasonNow))]
+    public static class GrowthSeasonNowPatch
+    {
+        [HarmonyPostfix]
+        public static void GrowthSeasonNow_Postfix(ref bool __result, IntVec3 c, Map map, bool forSowing = false)
+        {
+            IPlantToGrowSettable plantToGrowSettable = c.GetPlantToGrowSettable(map);
+            if (plantToGrowSettable == null)
+            {
+                __result = false;
+            }
+            else
+            {
+                ThingDef plant = plantToGrowSettable.GetPlantDefToGrow();
+                if (plant == ThrumkinDefOf.Plant_Frostleaf)
+                {
+                    __result = true;
+                }
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
     public static class PreApplyDamagePatch
     {
@@ -30,6 +52,22 @@ namespace SyrThrumkin
             if (__instance.def == ThrumkinDefOf.Thrumkin)
             {
                 dinfo.SetAmount(dinfo.Amount * 0.8f);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Hediff_Injury), nameof(Hediff_Injury.Heal))]
+    public static class HealPatch
+    {
+        [HarmonyPrefix]
+        public static void Heal_Prefix(ref float amount, Hediff_Injury __instance)
+        {
+            if (__instance?.pawn?.def != null)
+            {
+                if (__instance.pawn.def == ThrumkinDefOf.Thrumkin)
+                {
+                    amount *= 2;
+                }
             }
         }
     }
@@ -87,16 +125,15 @@ namespace SyrThrumkin
         [HarmonyPostfix]
         public static void IngestedCalculateAmounts_Postfix(Thing __instance, Pawn ingester, float nutritionWanted, ref float nutritionIngested)
         {
-            
             if (ingester?.def != null && __instance?.def?.ingestible != null && ingester.def == ThrumkinDefOf.Thrumkin)
             {
                 CompIngredients compIngr = __instance.TryGetComp<CompIngredients>();
                 if (compIngr?.ingredients != null)
                 {
-                    bool meat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) != FoodTypeFlags.None);
-                    bool animalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
-                    bool nonMeat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) == FoodTypeFlags.None);
-                    bool nonAnimalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) == FoodTypeFlags.None);
+                    bool meat = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.Meat) != FoodTypeFlags.None);
+                    bool animalP = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
+                    bool nonMeat = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.Meat) == FoodTypeFlags.None);
+                    bool nonAnimalP = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.AnimalProduct) == FoodTypeFlags.None);
                     if (meat && animalP)
                     {
                         return;
@@ -133,6 +170,26 @@ namespace SyrThrumkin
         }
     }
 
+    [HarmonyPatch(typeof(Thing), nameof(Thing.Ingested))]
+    public class IngestedPatch
+    {
+        [HarmonyPostfix]
+        public static void Ingested_Postfix(Thing __instance, Pawn ingester, float nutritionWanted)
+        {
+            if (ingester?.def != null)
+            {
+                CompIngredients compIngr = __instance.TryGetComp<CompIngredients>();
+                if (compIngr?.ingredients != null)
+                {
+                    if (compIngr.ingredients.Contains(ThrumkinDefOf.RawFrostleaves))
+                    {
+                        ingester.health.AddHediff(ThrumkinDefOf.AteFrostLeaves);
+                    }
+                }
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(FoodUtility), nameof(FoodUtility.FoodOptimality))]
     public static class FoodOptimalityPatch
     {
@@ -144,10 +201,10 @@ namespace SyrThrumkin
                 CompIngredients compIngr = foodSource.TryGetComp<CompIngredients>();
                 if (compIngr?.ingredients != null)
                 {
-                    bool meat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) != FoodTypeFlags.None);
-                    bool animalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
-                    bool nonMeat = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.Meat) == FoodTypeFlags.None);
-                    bool nonAnimalP = compIngr.ingredients.Exists(i => (i.ingestible.foodType & FoodTypeFlags.AnimalProduct) == FoodTypeFlags.None);
+                    bool meat = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.Meat) != FoodTypeFlags.None);
+                    bool animalP = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.AnimalProduct) != FoodTypeFlags.None);
+                    bool nonMeat = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.Meat) == FoodTypeFlags.None);
+                    bool nonAnimalP = compIngr.ingredients.Exists(i => ((i.ingestible?.foodType ?? FoodTypeFlags.None) & FoodTypeFlags.AnimalProduct) == FoodTypeFlags.None);
                     if (meat && animalP)
                     {
                         return;
@@ -289,7 +346,7 @@ namespace SyrThrumkin
         }
     }
 
-    [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool) })]
+    [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
     public static class RenderPawnInternalPatch
     {
         [HarmonyPrefix]
@@ -317,7 +374,7 @@ namespace SyrThrumkin
                 __instance.leader = null;
                 PrefixRunning = true;
                 PawnGenerationRequest request = new PawnGenerationRequest(ThrumkinDefOf.Thrumkin_ElderMelee, __instance, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, true, 1f,
-                    false, true, true, false, false, false, false, null, null, null, null, null, Gender.Female, null, null);
+                    false, true, true, false, false, false, false, false, 0, null, 1, null, null, null, null, null, null, null, Gender.Female, null, null, null, null);
                 Pawn pawn;
                 int i = 0;
                 do
@@ -335,7 +392,7 @@ namespace SyrThrumkin
                     Log.Warning("Thrumkin - Generated too many pawns when attempting to get specific backstory");
                 }
                 pawn.Name = ThrumkinDefOf.Thrumkin_Bio_Menardy.name;
-                pawn.story.hairDef = ThrumkinDefOf.Thrumkin_Hair_0;
+                pawn.story.hairDef = ThrumkinDefOf.Thrumkin_Hair_3;
                 __instance.leader = pawn;
                 Current.Game.GetComponent<GameComponent_MenardySpawnable>().MenardySpawnable = false;
                 PrefixRunning = false;
@@ -357,6 +414,36 @@ namespace SyrThrumkin
                 if (!GenerateNewLeaderPatch.PrefixRunning && (__result.story.childhood == ThrumkinDefOf.Thrumkin_CBio_Menardy.backstory || __result.story.adulthood == ThrumkinDefOf.Thrumkin_ABio_Menardy.backstory))
                 {
                     __result = null;
+                }
+            }
+            if (__result?.def != null && __result?.story?.hairDef != null)
+            {
+                if (__result.def != ThrumkinDefOf.Thrumkin)
+                {
+                    if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_0)
+                    {
+                        __result = null;
+                    }
+                    else if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_1)
+                    {
+                        __result = null;
+                    }
+                    else if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_2)
+                    {
+                        __result = null;
+                    }
+                    else if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_3)
+                    {
+                        __result = null;
+                    }
+                    else if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_4)
+                    {
+                        __result = null;
+                    }
+                    else if (__result.story.hairDef == ThrumkinDefOf.Thrumkin_Hair_5)
+                    {
+                        __result = null;
+                    }
                 }
             }
         }
