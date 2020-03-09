@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef ParentName="DiseaseBase">
+    <defName>AteWoodHediff</defName>
+    <label>ate wood</label>
+    <description>Negative effects from eating wood instead of proper food.</description>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>weakened</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>AteFrostLeaves</defName>
+    <label>frostleaves</label>
+    <description>Positive effects from eating frostleaves.</description>
+    <defaultLabelColor>(0.3,0.8,0.9)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.09</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

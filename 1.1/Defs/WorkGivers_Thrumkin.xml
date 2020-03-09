@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <WorkGiverDef>
+    <defName>ShearThrumkin</defName>
+    <label>shear thrumkin</label>
+    <giverClass>SyrThrumkin.WorkGiver_ShearThrumkin</giverClass>
+    <workType>Handling</workType>
+    <verb>shear</verb>
+    <gerund>shearing</gerund>
+    <priorityInType>99</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+  
+</Defs>

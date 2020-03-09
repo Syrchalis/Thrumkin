@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TraderKindDef>
+    <defName>Caravan_Neolithic_Thrumkin_BulkGoods</defName>
+    <label>bulk goods trader</label>
+    <commonality>2</commonality>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>1750</min>
+          <max>2200</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>550</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog_GhostAsh</thingDef>
+        <countRange>
+          <min>300</min>
+          <max>500</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Cloth</thingDef>
+				<countRange>
+          <min>100</min>
+          <max>350</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Pemmican</thingDef>
+        <countRange>
+          <min>250</min>
+          <max>300</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Textiles</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>600</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FoodRaw</categoryDef>
+				<excludedCategories><li>EggsFertilized</li></excludedCategories>
+        <thingDefCountRange>
+          <min>4</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>400</min>
+          <max>600</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineHerbal</thingDef>
+        <countRange>
+          <min>20</min>
+          <max>40</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Clothes">
+        <countRange>
+          <min>10</min>
+          <max>10</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Animals">
+        <maxWildness>0.70</maxWildness>
+        <tradeTagsSell>
+          <li>AnimalFarm</li>
+          <li>AnimalPet</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>
+          <min>2</min>
+          <max>4</max>
+        </kindCountRange>
+        <countRange>
+          <min>3</min>
+          <max>4</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef>
+    <defName>Caravan_Neolithic_Thrumkin_WarMerchant</defName>
+    <label>war merchant</label>
+    <commonality>1</commonality>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>1750</min>
+          <max>2200</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Pemmican</thingDef>
+				<countRange>
+          <min>150</min>
+          <max>300</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog_GhostAsh</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>300</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_WeaponsRanged">
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <countRange>
+          <min>4</min>
+          <max>4</max>
+        </countRange>
+      </li>
+			<li Class="StockGenerator_Clothes">
+				<countRange>
+					<min>10</min>
+					<max>10</max>
+				</countRange>
+			</li>
+      <li Class="StockGenerator_Category">
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <categoryDef>WeaponsMelee</categoryDef>
+        <thingDefCountRange>
+          <min>4</min>
+          <max>4</max>
+        </thingDefCountRange>
+				<countRange>
+					<min>2</min>
+					<max>3</max>
+				</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineHerbal</thingDef>
+        <countRange>
+          <min>45</min>
+          <max>60</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Animals">
+        <checkTemperature>true</checkTemperature>
+        <tradeTagsSell>
+          <li>AnimalFighter</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>
+          <min>2</min>
+          <max>4</max>
+        </kindCountRange>
+        <countRange>
+          <min>3</min>
+          <max>4</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+	<TraderKindDef>
+		<defName>Caravan_Neolithic_Thrumkin_Shaman</defName>
+		<label>shaman</label>
+    <commonality>1</commonality>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>
+					<min>1750</min>
+					<max>2200</max>
+				</countRange>
+			</li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog_GhostAsh</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>300</max>
+        </countRange>
+      </li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Pemmican</thingDef>
+				<countRange>
+					<min>150</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Plasteel</thingDef>
+				<countRange>
+					<min>50</min>
+					<max>150</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Gold</thingDef>
+				<countRange>
+					<min>30</min>
+					<max>60</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Neutroamine</thingDef>
+				<countRange>
+					<min>25</min>
+					<max>100</max>
+				</countRange>
+			</li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineHerbal</thingDef>
+        <countRange>
+          <min>25</min>
+          <max>40</max>
+        </countRange>
+      </li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Artifact</tradeTag>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>3</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Drugs</categoryDef>
+				<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>1</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>300</min>
+					<max>700</max>
+				</totalPriceRange>
+			</li>
+      <li Class="StockGenerator_Animals">
+        <tradeTagsSell>
+          <li>AnimalUncommon</li>
+          <li>AnimalFighter</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>
+          <min>2</min>
+          <max>3</max>
+        </kindCountRange>
+        <countRange>
+          <min>3</min>
+          <max>4</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+		</stockGenerators>
+	</TraderKindDef>
+
+  <TraderKindDef>
+    <defName>Visitor_Neolithic_Thrumkin</defName>
+    <label>trader</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>450</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Pemmican</thingDef>
+        <countRange>
+          <min>60</min>
+          <max>120</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineHerbal</thingDef>
+        <countRange>
+          <min>10</min>
+          <max>20</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_WeaponsRanged">
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <countRange>
+          <min>0</min>
+          <max>1</max>
+        </countRange>
+    </li>
+      <li Class="StockGenerator_Category">
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <categoryDef>WeaponsMelee</categoryDef>
+        <countRange>
+          <min>1</min>
+          <max>3</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+				<categoryDef>Drugs</categoryDef>
+				<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>1</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>400</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Clothes">
+        <countRange>
+          <min>0</min>
+          <max>1</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef>
+    <defName>Base_Neolithic_Thrumkin</defName>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>5000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+				<countRange>
+          <min>3</min>
+          <max>10</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Steel</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>300</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog</thingDef>
+        <countRange>
+          <min>500</min>
+          <max>600</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WoodLog_GhostAsh</thingDef>
+        <countRange>
+          <min>500</min>
+          <max>600</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Cloth</thingDef>
+        <countRange>
+          <min>200</min>
+          <max>300</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Gold</thingDef>
+        <countRange>
+          <min>-40</min>
+          <max>120</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Pemmican</thingDef>
+        <countRange>
+          <min>500</min>
+          <max>1000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Textiles</categoryDef>
+        <thingDefCountRange>
+          <min>1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>300</min>
+          <max>700</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>ResourcesRaw</categoryDef>
+        <thingDefCountRange>
+          <min>3</min>
+          <max>3</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>600</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FoodRaw</categoryDef>
+				<excludedCategories><li>EggsFertilized</li></excludedCategories>
+				<thingDefCountRange>
+          <min>3</min>
+          <max>5</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>600</min>
+          <max>1200</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineHerbal</thingDef>
+        <countRange>
+          <min>75</min>
+          <max>150</max>
+        </countRange>
+      </li>
+			<li Class="StockGenerator_Clothes">
+				<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+				<countRange>
+					<min>4</min>
+					<max>12</max>
+				</countRange>
+			</li>
+      <li Class="StockGenerator_Animals">
+        <checkTemperature>true</checkTemperature>
+        <maxWildness>0.70</maxWildness>
+        <tradeTagsSell>
+          <li>AnimalFarm</li>
+          <li>AnimalPet</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+          <li>AnimalUncommon</li>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>
+          <min>3</min>
+          <max>6</max>
+        </kindCountRange>
+        <countRange>
+          <min>1</min>
+          <max>6</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef>
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>1</min>
+          <max>3</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>400</min>
+          <max>1000</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>Chocolate</li>
+          <li>Kibble</li>
+        </thingDefs>
+      </li>
+      <li Class="StockGenerator_WeaponsRanged">
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <countRange>
+          <min>2</min>
+          <max>4</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>WeaponsMelee</categoryDef>
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>3</min>
+          <max>5</max>
+        </thingDefCountRange>
+        <countRange>
+          <min>2</min>
+          <max>4</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>Artifact</tradeTag>
+        <thingDefCountRange>
+          <min>0</min>
+          <max>3</max>
+        </thingDefCountRange>
+        <countRange>
+          <min>1</min>
+          <max>1</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>
