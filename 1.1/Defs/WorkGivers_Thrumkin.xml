@@ -13,5 +13,12 @@
       <li>Manipulation</li>
     </requiredCapacities>
   </WorkGiverDef>
+
+  <JobDef>
+    <defName>ShearThrumkin</defName>
+    <driverClass>SyrThrumkin.JobDriver_ShearThrumkin</driverClass>
+    <reportString>shearing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
   
 </Defs>

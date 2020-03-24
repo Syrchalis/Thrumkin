@@ -21,10 +21,14 @@ namespace SyrThrumkin
         public static ThingDef Apparel_PlateArmor;
         public static ThingDef Apparel_TribalA;
         public static ThingDef DevilstrandCloth;
+        public static ThingDef WoodLog_GhostAsh;
         public static ThingDef RawFrostleaves;
         public static ThingDef Plant_Frostleaf;
+        public static ThingDef MealLavish;
+        public static TerrainDef GhostAshFloor;
         public static BodyDef Thrumkin_Body;
         public static BodyPartDef HornThrumkin;
+        public static BodyPartGroupDef Feet;
         public static ThoughtDef MyHornHarvested;
         public static ThoughtDef KnowColonistHornHarvested;
         public static ThoughtDef KnowOtherHornHarvested;
@@ -41,5 +45,7 @@ namespace SyrThrumkin
         public static HairDef Thrumkin_Hair_4;
         public static HairDef Thrumkin_Hair_5;
         public static HediffDef AteFrostLeaves;
+        public static HediffDef AteWoodHediff;
+        public static JobDef ShearThrumkin;
     }
 }

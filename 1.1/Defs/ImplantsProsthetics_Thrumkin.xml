@@ -6,7 +6,7 @@
     <label>steel horn</label>
     <description>A steel horn replacement for Thrumkin, enhanced with plasteel. Not quite as durable and elegant as their natural horns, but a huge improvement over having none.</description>
 	<graphicData>
-      <texPath>Things/Items/Health/SteelThrumkinHorn</texPath>
+      <texPath>Things/Item/Health/SteelThrumkinHorn</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <techLevel>Spacer</techLevel>
@@ -55,7 +55,7 @@
     <label>horn enhancement</label>
     <description>A complex enhancement designed to harden and sharpen the horn of a thrumkin. It also makes the horn lighter.</description>
 	<graphicData>
-      <texPath>Things/Items/Health/EnhancementThrumkinHorn</texPath>
+      <texPath>Things/Item/Health/EnhancementThrumkinHorn</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <techLevel>Spacer</techLevel>

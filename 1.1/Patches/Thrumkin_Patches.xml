@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/FactionDef[@Name = "OutlanderFactionBase"]/pawnGroupMakers//Town_Guard/..</xpath>
+		<value>
+			<Thrumkin_Villager>1</Thrumkin_Villager>
+			<Thrumkin_Guard>0.5</Thrumkin_Guard>
+			<Thrumkin_Gunner>0.3</Thrumkin_Gunner>
+			<Thrumkin_Slasher>0.5</Thrumkin_Slasher>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/FactionDef[@Name = "TribeBase"]/pawnGroupMakers//Tribal_Warrior/..</xpath>
+		<value>
+			<Thrumkin_Penitent>0.5</Thrumkin_Penitent>
+			<Thrumkin_Archer>0.2</Thrumkin_Archer>
+			<Thrumkin_Warrior>0.5</Thrumkin_Warrior>
+			<Thrumkin_Hunter>0.2</Thrumkin_Hunter>
+			<Thrumkin_Berserker>0.5</Thrumkin_Berserker>
+			<Thrumkin_HeavyArcher>0.2</Thrumkin_HeavyArcher>
+			<Thrumkin_ElderMelee>0.5</Thrumkin_ElderMelee>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/FactionDef[@Name = "TribeBase"]/pawnGroupMakers/li[2]/options</xpath>
+		<value>
+			<Thrumkin_Archer>2</Thrumkin_Archer>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/FactionDef[defName = "Pirate"]/pawnGroupMakers//Mercenary_Slasher/..</xpath>
+		<value>
+			<Thrumkin_Gunner>0.5</Thrumkin_Gunner>
+			<Thrumkin_Slasher>1</Thrumkin_Slasher>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+	  <xpath>Defs/FactionDef[defName = "Empire"]/pawnGroupMakers//Empire_Fighter_Trooper/..</xpath>
+		<value>
+			<Thrumkin_Gunner>0.2</Thrumkin_Gunner>
+			<Thrumkin_Slasher>0.2</Thrumkin_Slasher>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "WoodLog"]</xpath>
+		  <value>
+			<socialPropernessMatters>true</socialPropernessMatters>
+			<ingestible>
+			  <foodType>Tree</foodType>
+			  <maxNumToIngestAtOnce>30</maxNumToIngestAtOnce>
+			  <optimalityOffsetHumanlikes>-25</optimalityOffsetHumanlikes>
+			  <ingestEffect>EatVegetarian</ingestEffect>
+			  <ingestSound>RawVegetable_Eat</ingestSound>
+			  <preferability>RawBad</preferability>
+			  <baseIngestTicks>1200</baseIngestTicks>
+			  <specialThoughtDirect>AteWood</specialThoughtDirect>
+			</ingestible>
+		  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "WoodLog"]/statBases</xpath>
+		  <value>
+			<Nutrition>0.05</Nutrition>
+		  </value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "Jade"]/stuffProps/statFactors/Beauty</xpath>
+		  <value>
+			<Beauty>3</Beauty>
+		  </value>
+	</Operation>
+
+</Patch>

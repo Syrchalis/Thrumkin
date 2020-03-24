@@ -21,11 +21,10 @@
     <factionIconPath>World/ThrumkinBase</factionIconPath>
     <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
-    <factionNameMaker>NamerFactionTribal</factionNameMaker>
+    <factionNameMaker>NamerFactionThrumkin</factionNameMaker>
     <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
     <geneticVariance>1</geneticVariance>
     <hairTags>
-      <li>Thrumkin</li>
       <li>Tribal</li>
     </hairTags>
     <startingResearchTags>
@@ -42,6 +41,7 @@
     <colorSpectrum>
       <li>(0, 0.737, 0.847)</li>
     </colorSpectrum>
+    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
   </FactionDef>
 
   <FactionDef ParentName="HumanFactionBase" Name="ThrumkinTribeBase" Abstract="True">
@@ -53,14 +53,13 @@
     <canMakeRandomly>true</canMakeRandomly>
     <canStageAttacks>true</canStageAttacks>
 		<geneticVariance>0.1</geneticVariance>
-    <factionNameMaker>NamerFactionTribal</factionNameMaker>
+    <factionNameMaker>NamerFactionThrumkin</factionNameMaker>
     <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
     <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
     <techLevel>Neolithic</techLevel>
     <backstoryFilters>
       <li>
         <categories>
-          <li>Tribal</li>
           <li>Thrumkin</li>
         </categories>
       </li>
@@ -68,7 +67,7 @@
     <factionIconPath>World/ThrumkinBase</factionIconPath>
     <leaderTitle>elder</leaderTitle>
     <hairTags>
-      <li>Thrumkin</li>
+      <li>Tribal</li>
     </hairTags>
     <raidCommonalityFromPointsCurve>
       <points>
@@ -172,7 +171,7 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>World/ThrumkinBase</settlementTexturePath>
+    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
   </FactionDef>
 
   <FactionDef ParentName="ThrumkinTribeBase">
@@ -191,5 +190,53 @@
       <max>50</max>
     </naturalColonyGoodwill>
   </FactionDef>
+
+  <RulePackDef>
+    <defName>NamerFactionThrumkin</defName>
+    <include>
+      <li>TribalWordUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->The [Color] [thrumkin_part]</li>
+        <li>r_name->The [WordTribal] [thrumkin_part]</li>
+        <li>r_name->The [thrumkin_part] [thrumkin_union]</li>
+        <li>r_name->[thrumkin_union] of [thrumkin_part_plural]</li>
+        <li>r_name->The [Animal] [thrumkin_part_plural]</li>
+        <li>r_name->The [TerrainFeature] [thrumkin_part_plural]</li>
+        <li>r_name->The [thrumkin_part_plural] of the [TerrainFeature]</li>
+        <li>r_name->The [Vegetables] Tribe</li>
+        <li>r_name(p=2)->[thrumkin_union] of the [TerrainFeature]</li>
+        <li>r_name->[AdjectiveCurious] [thrumkin_union]</li>
+        <li>r_name->[AdjectiveFriendly] [thrumkin_union]</li>
+        <li>r_name(p=2)->[AdjectiveCurious] [thrumkin_part]</li>
+        <li>r_name(p=2)->[AdjectiveFriendly] [thrumkin_part]</li>
+
+        <li>thrumkin_part(p=2)->hoof</li>
+        <li>thrumkin_part(p=2)->hooves</li>
+        <li>thrumkin_part(p=2)->horn</li>
+        <li>thrumkin_part(p=2)->horns</li>
+        <li>thrumkin_part->pelt</li>
+        <li>thrumkin_part->pelts</li>
+        <li>thrumkin_part->tail</li>
+        <li>thrumkin_part->tails</li>
+
+        <li>thrumkin_part_plural(p=2)->hooves</li>
+        <li>thrumkin_part_plural(p=2)->horns</li>
+        <li>thrumkin_part_plural->pelts</li>
+        <li>thrumkin_part_plural->tails</li>
+
+        <li>thrumkin_union->union</li>
+        <li>thrumkin_union->nation</li>
+        <li>thrumkin_union->kinship</li>
+        <li>thrumkin_union->tribe</li>
+        <li>thrumkin_union->alliance</li>
+        <li>thrumkin_union->covenant</li>
+        <li>thrumkin_union->treaty</li>
+        <li>thrumkin_union->pact</li>
+        <li>thrumkin_union->coalition</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
 
 </Defs>
