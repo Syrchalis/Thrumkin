@@ -26,10 +26,10 @@
         <li>Torso</li>
       </groups>
       <parts>
-		<li>
-		  <def>Tail</def>
-		  <coverage>0.07</coverage>
-		</li>
+        <li>
+          <def>Tail</def>
+          <coverage>0.02</coverage>
+        </li>
         <li>
           <def>Ribcage</def>
           <coverage>0.036</coverage>

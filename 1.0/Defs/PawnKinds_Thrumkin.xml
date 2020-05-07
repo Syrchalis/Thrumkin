@@ -251,7 +251,6 @@
   </PawnKindDef>
 
   <PawnKindDef ParentName="ThrumkinTribalBase" Name="ThrumkinElderBase" Abstract="True">
-    <defName>Thrumkin_ElderMelee</defName>
     <combatPower>150</combatPower>
     <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
     <minGenerationAge>30</minGenerationAge>

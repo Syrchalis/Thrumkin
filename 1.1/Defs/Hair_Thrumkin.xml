@@ -24,7 +24,7 @@
   <HairDef>
     <defName>Thrumkin_Hair_2</defName>
     <label>thrumkin_short</label>
-    <hairGender>Any</hairGender>
+    <hairGender>Male</hairGender>
     <texPath>Things/Thrumkin/Hairs/Hair_2</texPath>
 		<hairTags>
 			<li>Thrumkin</li>

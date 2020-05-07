@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +12,13 @@ namespace SyrThrumkin
     class SyrThrumkinSettings : ModSettings
     {
         public static bool useUnsupportedHair = false;
+        public static bool useStandardAI = false;
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look<bool>(ref useUnsupportedHair, "SyrThrumkin_useUnsupportedHair", false, true);
+            Scribe_Values.Look<bool>(ref useStandardAI, "SyrThrumkin_usestandardAI", false, true);
         }
     }
 }

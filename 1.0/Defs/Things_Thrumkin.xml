@@ -32,7 +32,7 @@
     
 Only thrumkin know how to sow ghost ash trees.</description>
     <graphicData>
-      <texPath>Things/Items/Resource/WoodLog_GhostAsh</texPath>
+      <texPath>Things/Item/Resource/GhostAsh</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <soundInteract>Wood_Drop</soundInteract>
@@ -104,7 +104,7 @@ Only thrumkin know how to sow ghost ash trees.</description>
     <label>crossbow</label>
     <description>A powerful crossbow. Fires a heavy bolt long distances.</description>
     <graphicData>
-      <texPath>Things/Items/Thrumkin_Crossbow</texPath>
+      <texPath>Things/Item/Thrumkin_Crossbow</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Large</soundInteract>
@@ -174,7 +174,7 @@ Only thrumkin know how to sow ghost ash trees.</description>
     <label>Thrumkin Blade</label>
     <description>Highly advanced swords designed by Thrumkin.</description>
     <graphicData>
-      <texPath>Things/Items/Thrumkin_Sword</texPath>
+      <texPath>Things/Item/Thrumkin_Sword</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
@@ -325,7 +325,7 @@ Cannot be grown in hydroponics, needs additional harvest work, provides less yie
     <label>frostleaves</label>
     <description>Blue colored fruit which looks like leaves. Nice to eat, even when raw. Frostleaves sooth the mind and can prevent mental breaks. Can be used as vegetable and will even retain its benefit when used as ingredient.</description>
     <graphicData>
-      <texPath>Things/Items/Resource/Frostleaves</texPath>
+      <texPath>Things/Item/Resource/Frostleaves</texPath>
     </graphicData>
     <statBases>
       <MarketValue>3.0</MarketValue>

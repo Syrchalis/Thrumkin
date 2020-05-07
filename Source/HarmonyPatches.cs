@@ -118,14 +118,9 @@ namespace SyrThrumkin
         {
             if (pawn.def == ThrumkinDefOf.Thrumkin)
             {
-                float roll = Rand.Value;
-                if (roll < 0.2f)
+                if (__result != QualityCategory.Awful && Rand.Value < 0.2f)
                 {
                     __result -= 1;
-                }
-                if (__result < QualityCategory.Awful)
-                {
-                    __result = QualityCategory.Awful;
                 }
             }
         }
@@ -329,6 +324,59 @@ namespace SyrThrumkin
                     __result = false;
                 }
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(Room), nameof(Room.Owners), MethodType.Getter)]
+    public class RoomOwnersPatch
+    {
+        [HarmonyPostfix]
+        public static IEnumerable<Pawn> RoomOwners_Postfix(IEnumerable<Pawn> __result, Room __instance)
+        {
+            if (__instance.TouchesMapEdge)
+            {
+                yield break;
+            }
+            if (__instance.IsHuge)
+            {
+                yield break;
+            }
+            if (__instance.Role != RoomRoleDefOf.Bedroom && __instance.Role != RoomRoleDefOf.PrisonCell && __instance.Role != RoomRoleDefOf.Barracks && __instance.Role != RoomRoleDefOf.PrisonBarracks)
+            {
+                yield break;
+            }
+            Pawn pawn = null;
+            Pawn secondOwner = null;
+            foreach (Building_Bed building_Bed in __instance.ContainedBeds)
+            {
+                if (building_Bed.def.building.bed_humanlike)
+                {
+                    for (int i = 0; i < building_Bed.OwnersForReading.Count; i++)
+                    {
+                        if (pawn == null)
+                        {
+                            pawn = building_Bed.OwnersForReading[i];
+                        }
+                        else
+                        {
+                            if (secondOwner != null)
+                            {
+                                yield break;
+                            }
+                            secondOwner = building_Bed.OwnersForReading[i];
+                        }
+                    }
+                }
+            }
+            if (pawn != null)
+            {
+                yield return pawn;
+                if (secondOwner != null)
+                {
+                    yield return secondOwner;
+                }
+            }
+            yield break;
         }
     }
 
@@ -557,33 +605,34 @@ namespace SyrThrumkin
     public static class RulesForPawnPatch
     {
         [HarmonyPostfix]
-        public static IEnumerable<Rule> RulesForPawn_Postfix(IEnumerable<Rule> __result, string pawnSymbol, string title, PawnKindDef kind)
+        public static IEnumerable<Rule> RulesForPawn_Postfix(IEnumerable<Rule> __result, string pawnSymbol, string title, Gender gender, PawnKindDef kind)
         {
+            List<Rule> ruleList = __result.ToList();
             string prefix = "";
             if (!pawnSymbol.NullOrEmpty())
             {
                 prefix = prefix + pawnSymbol + "_";
             }
-            foreach (var v in __result)
+            for (int i = 0; i < ruleList.Count; i++)
             {
-                Rule_String rule = v as Rule_String;
-                if (rule != null && rule.keyword == prefix + "title")
+                Rule_String r = ruleList[i] as Rule_String;
+                if (r != null && r.keyword == (prefix + "titleIndef"))
                 {
-                    yield return new Rule_String(prefix + "title", kind.race.label + " " + title);
+                    ruleList[i] = new Rule_String(prefix + "titleIndef", Find.ActiveLanguageWorker.WithIndefiniteArticle(kind.race.label + " " + title, gender, false, false));
                 }
-                else if (rule != null && rule.keyword == prefix + "titleIndef")
+                else if (r != null && r.keyword == (prefix + "titleDef"))
                 {
-                    yield return new Rule_String(prefix + "titleIndef", Find.ActiveLanguageWorker.WithIndefiniteArticle(kind.race.label + " " + title, false, false));
+                    ruleList[i] = new Rule_String(prefix + "titleDef", Find.ActiveLanguageWorker.WithDefiniteArticle(kind.race.label + " " + title, gender, false, false));
                 }
-                else if (rule != null && rule.keyword == prefix + "titleDef")
+                else if (r != null && r.keyword == (prefix + "title"))
                 {
-                    yield return new Rule_String(prefix + "titleDef", Find.ActiveLanguageWorker.WithDefiniteArticle(kind.race.label + " " + title, false, false));
+                    ruleList[i] = new Rule_String(prefix + "title", kind.race.label + " " + title);
                 }
-                yield return v;
             }
-            if (title != null)
+            __result = ruleList;
+            foreach (Rule rule in __result)
             {
-                yield return new Rule_String(prefix + "race", kind.race.label);
+                yield return rule;
             }
         }
     }

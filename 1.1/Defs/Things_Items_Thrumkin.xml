@@ -24,7 +24,7 @@
   <ThingDef ParentName="MealCooked">
     <defName>MealFine_Thrumkin</defName>
     <label>fine meal (vegetables)</label>
-    <description>A complex dish assembled with care from a vegetables and animal products. This is useful only for races that need vegetables as nutrition, like thrumkin.</description>
+    <description>A complex dish assembled with care from vegetables and animal products. This is useful only for races that need vegetables as nutrition, like thrumkin.</description>
     <graphicData>
       <texPath>Things/Item/Fine_veg</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

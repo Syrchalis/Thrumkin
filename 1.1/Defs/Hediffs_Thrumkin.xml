@@ -32,12 +32,14 @@
     </stages>
   </HediffDef>
 
-  <HediffDef ParentName="DiseaseBase">
+  <HediffDef>
     <defName>AteFrostLeaves</defName>
     <label>frostleaves</label>
     <description>Positive effects from eating frostleaves.</description>
+    <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.3,0.8,0.9)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-1</severityPerDay>

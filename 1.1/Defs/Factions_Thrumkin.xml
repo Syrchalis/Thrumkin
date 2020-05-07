@@ -147,8 +147,10 @@
           <Thrumkin_Trader>1</Thrumkin_Trader>
         </traders>
         <carriers>
-          <Muffalo>10</Muffalo>
-          <Thrumbo>1</Thrumbo>
+          <Muffalo>7</Muffalo>
+          <Horse>3</Horse>
+          <Bison>3</Bison>
+          <Elephant>1</Elephant>
         </carriers>
         <guards>
           <Thrumkin_Warrior>15</Thrumkin_Warrior>

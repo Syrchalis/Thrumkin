@@ -23,17 +23,17 @@
 			<forcedRaceTraitEntries>
 				<li>
 					<defName>Kind</defName>
-					<chance>20</chance>
+					<chance>5</chance>
 				</li>
 				<li>
-						<defName>NaturalMood</defName>
-						<degree>2</degree>
-						<commonalityFemale>20</commonalityFemale>
+					<defName>NaturalMood</defName>
+					<degree>2</degree>
+					<commonalityFemale>1</commonalityFemale>
 				</li>
 				<li>
-						<defName>Nerves</defName>
-						<degree>2</degree>
-						<commonalityMale>20</commonalityMale>
+					<defName>Nerves</defName>
+					<degree>2</degree>
+					<commonalityMale>1</commonalityMale>
 				</li>
 			</forcedRaceTraitEntries>
 			<maxDamageForSocialfight>8</maxDamageForSocialfight>
@@ -103,10 +103,10 @@
 						<offsets>
 						  <south>
 								<bodyTypes>
-									<Male>(-0.42, 0.47)</Male>
-									<Female>(-0.42, 0.47)</Female>
-									<Thin>(-0.42, 0.47)</Thin>
-									<Hulk>(-0.42, 0.47)</Hulk>
+									<Male>(-0.425, 0.49)</Male>
+									<Female>(-0.425, 0.49)</Female>
+									<Thin>(-0.425, 0.49)</Thin>
+									<Hulk>(-0.425, 0.49)</Hulk>
 								</bodyTypes>
 						  </south>
 						  <north>
@@ -190,10 +190,10 @@
 						<offsets>
 							<south>
 								<bodyTypes>
-									<Male>(-0.42, 0.45)</Male>
-									<Female>(-0.42, 0.45)</Female>
-									<Thin>(-0.42, 0.45)</Thin>
-									<Hulk>(-0.42, 0.45)</Hulk>
+									<Male>(-0.45, 0.45)</Male>
+									<Female>(-0.45, 0.45)</Female>
+									<Thin>(-0.45, 0.45)</Thin>
+									<Hulk>(-0.45, 0.45)</Hulk>
 								</bodyTypes>
 							</south>
 							<north>
@@ -241,10 +241,10 @@
 						<offsets>
 							<south>
 								<bodyTypes>
-									<Male>(-0.40, 0.45)</Male>
-									<Female>(-0.40, 0.45)</Female>
-									<Thin>(-0.40, 0.45)</Thin>
-									<Hulk>(-0.40, 0.45)</Hulk>
+									<Male>(-0.42, 0.45)</Male>
+									<Female>(-0.42, 0.45)</Female>
+									<Thin>(-0.42, 0.45)</Thin>
+									<Hulk>(-0.42, 0.45)</Hulk>
 								</bodyTypes>
 							</south>
 							<north>
@@ -405,7 +405,7 @@
 		<MarketValue>2500</MarketValue>
 		<MoveSpeed>4.6</MoveSpeed>
 	  	<Mass>80</Mass>
-		<Flammability>0.75</Flammability>
+		<Flammability>0.5</Flammability>
 		<ComfyTemperatureMin>6</ComfyTemperatureMin>
 		<ComfyTemperatureMax>26</ComfyTemperatureMax>
 		<LeatherAmount>75</LeatherAmount>
@@ -426,6 +426,9 @@
 		<AnimalGatherYield>1.2</AnimalGatherYield>
 		<PlantWorkSpeed>1.2</PlantWorkSpeed>
 		<PlantHarvestYield>1.1</PlantHarvestYield>
+		<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Heat>0.20</ArmorRating_Heat>
     </statBases>
     <tools>
       <li>
@@ -436,6 +439,7 @@
         </capacities>
         <power>18</power>
         <cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
         <linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
       </li>
       <li>

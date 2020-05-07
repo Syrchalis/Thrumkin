@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace SyrThrumkin
         public SyrThrumkinCore(ModContentPack content) : base(content)
         {
             settings = GetSettings<SyrThrumkinSettings>();
-            var harmony = HarmonyInstance.Create("Syrchalis.Rimworld.Thrumkin");
+            var harmony = new Harmony("Syrchalis.Rimworld.Thrumkin");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
@@ -30,11 +30,13 @@ namespace SyrThrumkin
             {
                 Listing_Standard listing_Standard = new Listing_Standard();
                 listing_Standard.Begin(inRect);
-                listing_Standard.CheckboxLabeled("SyrThrumkin_useUnsupportedHair".Translate(), ref SyrThrumkinSettings.useUnsupportedHair, ("SyrThrumkin_useUnsupportedHairTooltip".Translate()));
+                listing_Standard.CheckboxLabeled("SyrThrumkin_useUnsupportedHair".Translate(), ref SyrThrumkinSettings.useUnsupportedHair, "SyrThrumkin_useUnsupportedHairTooltip".Translate());
+                listing_Standard.CheckboxLabeled("SyrThrumkin_useStandardAI".Translate(), ref SyrThrumkinSettings.useStandardAI, "SyrThrumkin_useStandardAITooltip".Translate());
                 listing_Standard.Gap(24f);
                 if (listing_Standard.ButtonText("SyrThrumkin_defaultSettings".Translate(), "SyrThrumkin_defaultSettingsTooltip".Translate()))
                 {
                     SyrThrumkinSettings.useUnsupportedHair = false;
+                    SyrThrumkinSettings.useStandardAI = false;
                 }
                 listing_Standard.End();
                 settings.Write();
