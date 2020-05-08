@@ -1,8 +1,6 @@
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\bin\Debug\SyrThrumkin.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\bin\Debug\SyrThrumkin.pdb
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\bin\Debug\0Harmony.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\obj\Debug\SyrThrumkin.csprojAssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\obj\Debug\SyrThrumkin.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\obj\Debug\SyrThrumkin.csproj.CopyComplete
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\obj\Debug\SyrThrumkin.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SYR_Thrumkin\Source\obj\Debug\SyrThrumkin.pdb
