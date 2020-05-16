@@ -59,5 +59,8 @@ Menardy is a unique female thrumkin that spawns regularly (not always!) as facti
         <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
         <downloadUrl>https://github.com/erdelf/AlienRaces/</downloadUrl>
     </li>
-</modDependencies>
+    </modDependencies>
+	<loadAfter>
+		<li>erdelf.HumanoidAlienRaces</li>
+	</loadAfter>
 </ModMetaData>

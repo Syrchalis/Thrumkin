@@ -231,9 +231,9 @@ namespace SyrThrumkin
                 {
                     return foodValue;
                 }
-                if (foodSource.def == ThingDefOf.WoodLog)
+                if (foodSource.def == ThingDefOf.WoodLog || foodSource.def == ThingDefOf.Hay)
                 {
-                    foodValue -= 35;
+                    foodValue -= 50;
                 }
                 CompIngredients compIngr = foodSource.TryGetComp<CompIngredients>();
                 if (compIngr?.ingredients != null)
