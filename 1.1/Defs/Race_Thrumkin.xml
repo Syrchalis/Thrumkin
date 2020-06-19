@@ -5,430 +5,429 @@
     <defName>Thrumkin</defName>
     <label>thrumkin</label>
     <description>A large, graceful humanoid creature, with long white fur, a large sharp horn and short simple tail. Their striking resemblance to Thrumbos gave them their name and leaves no doubt to where this race might have originated from.\n\nWhile generally peaceful they make excellent melee fighters, thanks to their resilent hide and razor sharp horn. Thrumkin live in harmony with nature and know more about plants and animals than most advanced cultures, at least on the planet they are living on.\n\nThey are not particularly skilled when it comes to building tools and using them, neither are their structures more than simple protection from the elements.\n\nGood at: Melee, Plants, Animals, General Labor, Absorbing Damage\nBad at: Shooting, Quality Crafting/Construction, Drug Production, Research, Trading, Cooking, Not eating your entire supplies of food</description>
-	<alienRace>
-		<generalSettings>
-			<maleGenderProbability>0.5</maleGenderProbability>
-			<immuneToAge>false</immuneToAge>
-			<disallowedTraits>
-				<li>AnnoyingVoice</li>
-				<li>CreepyBreathing</li>
-				<li>Transhumanist</li>
-				<li>Xenophobia</li>
-				<li>Gourmand</li>
-				<li>Bloodlust</li>
-				<li>Psychopath</li>
-				<li>Cannibal</li>
-				<li>ShootingAccuracy</li>
-			</disallowedTraits>
-			<forcedRaceTraitEntries>
-				<li>
-					<defName>Kind</defName>
-					<chance>5</chance>
-				</li>
-				<li>
-					<defName>NaturalMood</defName>
-					<degree>2</degree>
-					<commonalityFemale>1</commonalityFemale>
-				</li>
-				<li>
-					<defName>Nerves</defName>
-					<degree>2</degree>
-					<commonalityMale>1</commonalityMale>
-				</li>
-			</forcedRaceTraitEntries>
-			<maxDamageForSocialfight>8</maxDamageForSocialfight>
-			<allowHumanBios>false</allowHumanBios>
-			<humanRecipeImport>true</humanRecipeImport>
-			<alienPartGenerator>      
-				<aliencrowntypes>
-					<li>Average_Normal</li>
-					<li>Average_Short</li>
-				</aliencrowntypes>
-			  <alienbodytypes>
-					<li>Male</li>
-					<li>Female</li>
-					<li>Thin</li>
-					<li>Hulk</li>
-				</alienbodytypes>
-				<useGenderedHeads>true</useGenderedHeads>
-				<useGenderedBodies>false</useGenderedBodies>
-				<bodyAddons>
+		<alienRace>
+			<generalSettings>
+				<maleGenderProbability>0.5</maleGenderProbability>
+				<immuneToAge>false</immuneToAge>
+				<disallowedTraits>
+					<li>AnnoyingVoice</li>
+					<li>CreepyBreathing</li>
+					<li>Transhumanist</li>
+					<li>Xenophobia</li>
+					<li>Gourmand</li>
+					<li>Bloodlust</li>
+					<li>Psychopath</li>
+					<li>Cannibal</li>
+					<li>ShootingAccuracy</li>
+				</disallowedTraits>
+				<forcedRaceTraitEntries>
 					<li>
-						<path>Things/Thrumkin/Tail/ThrumkinTail</path>
-						<bodyPart>Tail</bodyPart>
-						<useSkinColor>true</useSkinColor>
-						<inFrontOfBody>true</inFrontOfBody>
-						<drawnInBed>false</drawnInBed>
-						<offsets>
-						  <south>
-								<bodyTypes>
-									<Male>(0, 0)</Male>
-									<Female>(0, 0)</Female>
-									<Thin>(0, 0)</Thin>
-									<Hulk>(0, 0)</Hulk>
-								</bodyTypes>
-						  </south>
-						  <north>
-								<bodyTypes>
-									<Male>(0.0, 0.0)</Male>
-									<Female>(0.0, 0.0)</Female>
-									<Thin>(0.0, 0.0)</Thin>
-									<Hulk>(0.006, -0.25)</Hulk>
-								</bodyTypes>
-						  </north>
-						  <east>
-								<bodyTypes>
-									<Male>(0.03, 0)</Male>
-									<Female>(0.07, 0)</Female>
-									<Thin>(0, 0)</Thin>
-									<Hulk>(0.19, -0.07)</Hulk>
-								</bodyTypes>
-						  </east>
-						</offsets>
+						<defName>Kind</defName>
+						<chance>5</chance>
 					</li>
 					<li>
-						<drawSize>0.9</drawSize>
-						<path>Things/Thrumkin/Horn/ThrumkinHorn</path>
-						<bodyPart>HornThrumkin</bodyPart>
-						<useSkinColor>true</useSkinColor>
-						<inFrontOfBody>true</inFrontOfBody>
-						<hediffGraphics>
-							<SteelThrumkinHorn>Things/Thrumkin/Horn/Hediff/SteelThrumkinHorn</SteelThrumkinHorn>
-							<EnhancementThrumkinHorn>Things/Thrumkin/Horn/Hediff/EnhancementThrumkinHorn</EnhancementThrumkinHorn>
-						</hediffGraphics>
-						<backstoryGraphics>
-							<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/MenardyHorn</Thrumkin_CBio_Menardy>
-							<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/MenardyHorn</Thrumkin_ABio_Menardy>
-						</backstoryGraphics>
-						<offsets>
-						  <south>
-								<bodyTypes>
-									<Male>(-0.425, 0.49)</Male>
-									<Female>(-0.425, 0.49)</Female>
-									<Thin>(-0.425, 0.49)</Thin>
-									<Hulk>(-0.425, 0.49)</Hulk>
-								</bodyTypes>
-						  </south>
-						  <north>
-								<bodyTypes>
-									<Male>(0, 0)</Male>
-									<Female>(0, 0)</Female>
-									<Thin>(0, 0)</Thin>
-									<Hulk>(0, 0)</Hulk>
-								</bodyTypes>
-						  </north>
-						  <east>
-								<bodyTypes>
-									<Male>(0, 0)</Male>
-									<Female>(0, 0)</Female>
-									<Thin>(0, 0)</Thin>
-									<Hulk>(0, 0)</Hulk>
-								</bodyTypes>
-							<crownTypes>
-								<Average_Normal>(0, 0)</Average_Normal>
-								<Average_Short>(0, 0)</Average_Short>
-							</crownTypes>
-						  </east>
-						</offsets>
+						<defName>NaturalMood</defName>
+						<degree>2</degree>
+						<commonalityFemale>1</commonalityFemale>
 					</li>
 					<li>
-						<drawSize>0.9</drawSize>
-						<path>Things/Thrumkin/Horn/ThrumkinHornHidden</path>
-						<bodyPart>HornThrumkin</bodyPart>
-						<useSkinColor>true</useSkinColor>
-						<inFrontOfBody>false</inFrontOfBody>
-						<hediffGraphics>
-							<SteelThrumkinHorn>Things/Thrumkin/Horn/Hediff/SteelThrumkinHornHidden</SteelThrumkinHorn>
-							<EnhancementThrumkinHorn>Things/Thrumkin/Horn/Hediff/EnhancementThrumkinHornHidden</EnhancementThrumkinHorn>
-						</hediffGraphics>
-						<backstoryGraphics>
-								<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/MenardyHornHidden</Thrumkin_CBio_Menardy>
-								<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/MenardyHornHidden</Thrumkin_ABio_Menardy>
-						</backstoryGraphics>
-						<offsets>
-						  <south>
-								<bodyTypes>
-									<Male>(0, 0)</Male>
-									<Female>(0, 0)</Female>
-									<Thin>(0, 0)</Thin>
-									<Hulk>(0, 0)</Hulk>
-								</bodyTypes>
-						  </south>
-						  <north>
-								<bodyTypes>
-									<Male>(0, 1)</Male>
-									<Female>(0, 1)</Female>
-									<Thin>(0, 1)</Thin>
-									<Hulk>(0, 1)</Hulk>
-								</bodyTypes>
-						  </north>
-						  <east>
-								<bodyTypes>
-									<Male>(-0.53, 0.55)</Male>
-									<Female>(-0.58, 0.55)</Female>
-									<Thin>(-0.6, 0.55)</Thin>
-									<Hulk>(-0.6, 0.55)</Hulk>
-								</bodyTypes>
-							<crownTypes>
-								<Average_Normal>(0, 0)</Average_Normal>
-								<Average_Short>(0, 0)</Average_Short>
-							</crownTypes>
-						  </east>
-						</offsets>
+						<defName>Nerves</defName>
+						<degree>2</degree>
+						<commonalityMale>1</commonalityMale>
 					</li>
-					<li>
-						<drawSize>1</drawSize>
-						<path>Things/Thrumkin/Ears/LeftEar</path>
-						<bodyPart>left ear</bodyPart>
-						<inFrontOfBody>true</inFrontOfBody>
-						<useSkinColor>true</useSkinColor>
-						<layerOffset>0.01</layerOffset>
-						<backstoryGraphics>
-								<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/LeftEar</Thrumkin_CBio_Menardy>
-								<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/LeftEar</Thrumkin_ABio_Menardy>
-						</backstoryGraphics>
-						<offsets>
-							<south>
-								<bodyTypes>
-									<Male>(-0.45, 0.45)</Male>
-									<Female>(-0.45, 0.45)</Female>
-									<Thin>(-0.45, 0.45)</Thin>
-									<Hulk>(-0.45, 0.45)</Hulk>
-								</bodyTypes>
-							</south>
-							<north>
-								<bodyTypes>
-									<Male>(-0.01, 0.82)</Male>
-									<Female>(-0.01, 0.82)</Female>
-									<Thin>(-0.01, 0.82)</Thin>
-									<Hulk>(-0.01, 0.82)</Hulk>
-								</bodyTypes>
-							</north>
-							<east>
-								<bodyTypes>
-									<Male>(-0.45,0.55)</Male>
-									<Female>(-0.5,0.58)</Female>
-									<Thin>(-0.45,0.58)</Thin>
-									<Hulk>(-0.5,0.58)</Hulk>
-								</bodyTypes>
+				</forcedRaceTraitEntries>
+				<maxDamageForSocialfight>8</maxDamageForSocialfight>
+				<allowHumanBios>false</allowHumanBios>
+				<humanRecipeImport>true</humanRecipeImport>
+				<alienPartGenerator>      
+					<aliencrowntypes>
+						<li>Average_Normal</li>
+						<li>Average_Short</li>
+					</aliencrowntypes>
+					<alienbodytypes>
+						<li>Male</li>
+						<li>Female</li>
+						<li>Thin</li>
+						<li>Hulk</li>
+					</alienbodytypes>
+					<useGenderedHeads>true</useGenderedHeads>
+					<useGenderedBodies>false</useGenderedBodies>
+					<bodyAddons>
+						<li>
+							<path>Things/Thrumkin/Tail/ThrumkinTail</path>
+							<bodyPart>Tail</bodyPart>
+							<useSkinColor>true</useSkinColor>
+							<inFrontOfBody>true</inFrontOfBody>
+							<drawnInBed>false</drawnInBed>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(0, 0)</Male>
+										<Female>(0, 0)</Female>
+										<Thin>(0, 0)</Thin>
+										<Hulk>(0, 0)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(0.0, 0.0)</Male>
+										<Female>(0.0, 0.0)</Female>
+										<Thin>(0.0, 0.0)</Thin>
+										<Hulk>(0.006, -0.25)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(0.03, 0)</Male>
+										<Female>(0.07, 0)</Female>
+										<Thin>(0, 0)</Thin>
+										<Hulk>(0.19, -0.07)</Hulk>
+									</bodyTypes>
+								</east>
+							</offsets>
+						</li>
+						<li>
+							<drawSize>0.9</drawSize>
+							<path>Things/Thrumkin/Horn/ThrumkinHorn</path>
+							<bodyPart>HornThrumkin</bodyPart>
+							<useSkinColor>true</useSkinColor>
+							<inFrontOfBody>true</inFrontOfBody>
+							<hediffGraphics>
+								<SteelThrumkinHorn>Things/Thrumkin/Horn/Hediff/SteelThrumkinHorn</SteelThrumkinHorn>
+								<EnhancementThrumkinHorn>Things/Thrumkin/Horn/Hediff/EnhancementThrumkinHorn</EnhancementThrumkinHorn>
+							</hediffGraphics>
+							<backstoryGraphics>
+								<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/MenardyHorn</Thrumkin_CBio_Menardy>
+								<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/MenardyHorn</Thrumkin_ABio_Menardy>
+							</backstoryGraphics>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(-0.425, 0.49)</Male>
+										<Female>(-0.425, 0.49)</Female>
+										<Thin>(-0.425, 0.49)</Thin>
+										<Hulk>(-0.425, 0.49)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(0, 0)</Male>
+										<Female>(0, 0)</Female>
+										<Thin>(0, 0)</Thin>
+										<Hulk>(0, 0)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(0, 0)</Male>
+										<Female>(0, 0)</Female>
+										<Thin>(0, 0)</Thin>
+										<Hulk>(0, 0)</Hulk>
+									</bodyTypes>
 								<crownTypes>
-									<Average_Normal>(0,0)</Average_Normal>
+									<Average_Normal>(0, 0)</Average_Normal>
+									<Average_Short>(0, 0)</Average_Short>
 								</crownTypes>
-							</east>
-							<west>
-								<bodyTypes>
-									<Male>(-0.45,0.55)</Male>
-									<Female>(-0.5,0.58)</Female>
-									<Thin>(-0.45,0.58)</Thin>
-									<Hulk>(-0.5,0.58)</Hulk>
-								</bodyTypes>
+								</east>
+							</offsets>
+						</li>
+						<li>
+							<drawSize>0.9</drawSize>
+							<path>Things/Thrumkin/Horn/ThrumkinHornHidden</path>
+							<bodyPart>HornThrumkin</bodyPart>
+							<useSkinColor>true</useSkinColor>
+							<inFrontOfBody>false</inFrontOfBody>
+							<hediffGraphics>
+								<SteelThrumkinHorn>Things/Thrumkin/Horn/Hediff/SteelThrumkinHornHidden</SteelThrumkinHorn>
+								<EnhancementThrumkinHorn>Things/Thrumkin/Horn/Hediff/EnhancementThrumkinHornHidden</EnhancementThrumkinHorn>
+							</hediffGraphics>
+							<backstoryGraphics>
+									<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/MenardyHornHidden</Thrumkin_CBio_Menardy>
+									<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/MenardyHornHidden</Thrumkin_ABio_Menardy>
+							</backstoryGraphics>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(0, 0)</Male>
+										<Female>(0, 0)</Female>
+										<Thin>(0, 0)</Thin>
+										<Hulk>(0, 0)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(0, 1)</Male>
+										<Female>(0, 1)</Female>
+										<Thin>(0, 1)</Thin>
+										<Hulk>(0, 1)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(-0.53, 0.55)</Male>
+										<Female>(-0.58, 0.55)</Female>
+										<Thin>(-0.6, 0.55)</Thin>
+										<Hulk>(-0.6, 0.55)</Hulk>
+									</bodyTypes>
 								<crownTypes>
-									<Average_Normal>(0,0)</Average_Normal>
+									<Average_Normal>(0, 0)</Average_Normal>
+									<Average_Short>(0, 0)</Average_Short>
 								</crownTypes>
-							</west>
-						</offsets>
-					</li>
+								</east>
+							</offsets>
+						</li>
+						<li>
+							<drawSize>1</drawSize>
+							<path>Things/Thrumkin/Ears/LeftEar</path>
+							<bodyPart>left ear</bodyPart>
+							<inFrontOfBody>true</inFrontOfBody>
+							<useSkinColor>true</useSkinColor>
+							<layerOffset>0.01</layerOffset>
+							<backstoryGraphics>
+									<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/LeftEar</Thrumkin_CBio_Menardy>
+									<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/LeftEar</Thrumkin_ABio_Menardy>
+							</backstoryGraphics>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(-0.45, 0.45)</Male>
+										<Female>(-0.45, 0.45)</Female>
+										<Thin>(-0.45, 0.45)</Thin>
+										<Hulk>(-0.45, 0.45)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(-0.01, 0.82)</Male>
+										<Female>(-0.01, 0.82)</Female>
+										<Thin>(-0.01, 0.82)</Thin>
+										<Hulk>(-0.01, 0.82)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(-0.45,0.55)</Male>
+										<Female>(-0.5,0.58)</Female>
+										<Thin>(-0.45,0.58)</Thin>
+										<Hulk>(-0.5,0.58)</Hulk>
+									</bodyTypes>
+									<crownTypes>
+										<Average_Normal>(0,0)</Average_Normal>
+									</crownTypes>
+								</east>
+								<west>
+									<bodyTypes>
+										<Male>(-0.45,0.55)</Male>
+										<Female>(-0.5,0.58)</Female>
+										<Thin>(-0.45,0.58)</Thin>
+										<Hulk>(-0.5,0.58)</Hulk>
+									</bodyTypes>
+									<crownTypes>
+										<Average_Normal>(0,0)</Average_Normal>
+									</crownTypes>
+								</west>
+							</offsets>
+						</li>
+						<li>
+							<drawSize>1</drawSize>
+							<path>Things/Thrumkin/Ears/RightEar</path>
+							<bodyPart>right ear</bodyPart>
+							<inFrontOfBody>true</inFrontOfBody>
+							<useSkinColor>true</useSkinColor>
+							<backstoryGraphics>
+									<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/RightEar</Thrumkin_CBio_Menardy>
+									<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/RightEar</Thrumkin_ABio_Menardy>
+							</backstoryGraphics>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(-0.42, 0.45)</Male>
+										<Female>(-0.42, 0.45)</Female>
+										<Thin>(-0.42, 0.45)</Thin>
+										<Hulk>(-0.42, 0.45)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(0.01, 0.82)</Male>
+										<Female>(0.01, 0.82)</Female>
+										<Thin>(0.01, 0.82)</Thin>
+										<Hulk>(0.01, 0.82)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(-0.45, 0.6)</Male>
+										<Female>(-0.45, 0.6)</Female>
+										<Thin>(-0.45, 0.6)</Thin>
+										<Hulk>(-0.45, 0.6)</Hulk>
+									</bodyTypes>
+									<crownTypes>
+										<Average_Normal>(0,0)</Average_Normal>
+									</crownTypes>
+								</east>
+							</offsets>
+						</li>
+						<li>
+							<drawSize>1</drawSize>
+							<path>Things/Thrumkin/Ears/RightEarHidden</path>
+							<bodyPart>right ear</bodyPart>
+							<inFrontOfBody>false</inFrontOfBody>
+							<useSkinColor>true</useSkinColor>
+							<backstoryGraphics>
+									<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/RightEarHidden</Thrumkin_CBio_Menardy>
+									<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/RightEarHidden</Thrumkin_ABio_Menardy>
+							</backstoryGraphics>
+							<offsets>
+								<south>
+									<bodyTypes>
+										<Male>(-0.40, 0.45)</Male>
+										<Female>(-0.40, 0.45)</Female>
+										<Thin>(-0.40, 0.45)</Thin>
+										<Hulk>(-0.40, 0.45)</Hulk>
+									</bodyTypes>
+								</south>
+								<north>
+									<bodyTypes>
+										<Male>(0.01, 0.82)</Male>
+										<Female>(0.01, 0.82)</Female>
+										<Thin>(0.01, 0.82)</Thin>
+										<Hulk>(0.01, 0.82)</Hulk>
+									</bodyTypes>
+								</north>
+								<east>
+									<bodyTypes>
+										<Male>(-0.45, 0.6)</Male>
+										<Female>(-0.45, 0.6)</Female>
+										<Thin>(-0.45, 0.6)</Thin>
+										<Hulk>(-0.45, 0.6)</Hulk>
+									</bodyTypes>
+									<crownTypes>
+										<Average_Normal>(0,0)</Average_Normal>
+									</crownTypes>
+								</east>
+							</offsets>
+						</li>
+					</bodyAddons>
+				<customDrawSize>(1.2, 1.2)</customDrawSize>
+							<customHeadDrawSize>(1.0, 1.0)</customHeadDrawSize>
+							<customPortraitDrawSize>(1.1, 1.1)</customPortraitDrawSize>
+							<customPortraitHeadDrawSize>(1.0, 1.0)</customPortraitHeadDrawSize>
+			<alienskincolorgen Class="ColorGenerator_Options">
+				<options>
 					<li>
-						<drawSize>1</drawSize>
-						<path>Things/Thrumkin/Ears/RightEar</path>
-						<bodyPart>right ear</bodyPart>
-						<inFrontOfBody>true</inFrontOfBody>
-						<useSkinColor>true</useSkinColor>
-						<backstoryGraphics>
-								<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/RightEar</Thrumkin_CBio_Menardy>
-								<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/RightEar</Thrumkin_ABio_Menardy>
-						</backstoryGraphics>
-						<offsets>
-							<south>
-								<bodyTypes>
-									<Male>(-0.42, 0.45)</Male>
-									<Female>(-0.42, 0.45)</Female>
-									<Thin>(-0.42, 0.45)</Thin>
-									<Hulk>(-0.42, 0.45)</Hulk>
-								</bodyTypes>
-							</south>
-							<north>
-								<bodyTypes>
-									<Male>(0.01, 0.82)</Male>
-									<Female>(0.01, 0.82)</Female>
-									<Thin>(0.01, 0.82)</Thin>
-									<Hulk>(0.01, 0.82)</Hulk>
-								</bodyTypes>
-							</north>
-							<east>
-								<bodyTypes>
-									<Male>(-0.45, 0.6)</Male>
-									<Female>(-0.45, 0.6)</Female>
-									<Thin>(-0.45, 0.6)</Thin>
-									<Hulk>(-0.45, 0.6)</Hulk>
-								</bodyTypes>
-								<crownTypes>
-									<Average_Normal>(0,0)</Average_Normal>
-								</crownTypes>
-							</east>
-						</offsets>
+						<weight>1</weight>
+						<only>RGBA(1.0,1.0,1.0,1)</only>
 					</li>
+				</options>
+			</alienskincolorgen>
+			<alienskinsecondcolorgen Class="ColorGenerator_Options">
+				<options>
 					<li>
-						<drawSize>1</drawSize>
-						<path>Things/Thrumkin/Ears/RightEarHidden</path>
-						<bodyPart>right ear</bodyPart>
-						<inFrontOfBody>false</inFrontOfBody>
-						<useSkinColor>true</useSkinColor>
-						<backstoryGraphics>
-								<Thrumkin_CBio_Menardy>Things/Thrumkin/Menardy/RightEarHidden</Thrumkin_CBio_Menardy>
-								<Thrumkin_ABio_Menardy>Things/Thrumkin/Menardy/RightEarHidden</Thrumkin_ABio_Menardy>
-						</backstoryGraphics>
-						<offsets>
-							<south>
-								<bodyTypes>
-									<Male>(-0.40, 0.45)</Male>
-									<Female>(-0.40, 0.45)</Female>
-									<Thin>(-0.40, 0.45)</Thin>
-									<Hulk>(-0.40, 0.45)</Hulk>
-								</bodyTypes>
-							</south>
-							<north>
-								<bodyTypes>
-									<Male>(0.01, 0.82)</Male>
-									<Female>(0.01, 0.82)</Female>
-									<Thin>(0.01, 0.82)</Thin>
-									<Hulk>(0.01, 0.82)</Hulk>
-								</bodyTypes>
-							</north>
-							<east>
-								<bodyTypes>
-									<Male>(-0.45, 0.6)</Male>
-									<Female>(-0.45, 0.6)</Female>
-									<Thin>(-0.45, 0.6)</Thin>
-									<Hulk>(-0.45, 0.6)</Hulk>
-								</bodyTypes>
-								<crownTypes>
-									<Average_Normal>(0,0)</Average_Normal>
-								</crownTypes>
-							</east>
-						</offsets>
+						<weight>1</weight>
+						<only>RGBA(1.0,1.0,1.0,1)</only>
 					</li>
-				</bodyAddons>
-			<customDrawSize>(1.2, 1.2)</customDrawSize>
-            <customHeadDrawSize>(1.0, 1.0)</customHeadDrawSize>
-            <customPortraitDrawSize>(1.1, 1.1)</customPortraitDrawSize>
-            <customPortraitHeadDrawSize>(1.0, 1.0)</customPortraitHeadDrawSize>
-		<alienskincolorgen Class="ColorGenerator_Options">
-			<options>
+				</options>
+			</alienskinsecondcolorgen>
+			<alienhaircolorgen Class="ColorGenerator_Options">
+				<options>
+					<li>
+						<weight>1</weight>
+						<only>RGBA(1.0,1.0,1.0,1)</only>
+					</li>
+				</options>
+				</alienhaircolorgen>
+			</alienPartGenerator>
+			</generalSettings>
+			<graphicPaths>
 				<li>
-					<weight>1</weight>
-					<only>RGBA(1.0,1.0,1.0,1)</only>
+					<head>Things/Thrumkin/Head/</head>
+					<body>Things/Thrumkin/Body/</body>
 				</li>
-			</options>
-		</alienskincolorgen>
-		<alienskinsecondcolorgen Class="ColorGenerator_Options">
-			<options>
-				<li>
-					<weight>1</weight>
-					<only>RGBA(1.0,1.0,1.0,1)</only>
-				</li>
-			</options>
-		</alienskinsecondcolorgen>
-		<alienhaircolorgen Class="ColorGenerator_Options">
-			<options>
-				<li>
-					<weight>1</weight>
-					<only>RGBA(1.0,1.0,1.0,1)</only>
-				</li>
-			</options>
-			</alienhaircolorgen>
-		</alienPartGenerator>
-		</generalSettings>
-		<graphicPaths>
-			<li>
-				<head>Things/Thrumkin/Head/</head>
-				<body>Things/Thrumkin/Body/</body>
-			</li>
-		</graphicPaths>
-		<hairSettings>
-			<hasHair>true</hasHair>
-			<getsGreyAt>150</getsGreyAt>
-			<hairTags>
-				<li>Thrumkin</li>
-			</hairTags>
-		</hairSettings>	
-		<relationSettings>
-			<relationChanceModifierExLover>0.1</relationChanceModifierExLover>
-			<relationChanceModifierExSpouse>0.1</relationChanceModifierExSpouse>
-			<relationChanceModifierSpouse>0.1</relationChanceModifierSpouse>
-			<relationChanceModifierFiance>0.1</relationChanceModifierFiance>
-			<relationChanceModifierLover>0.1</relationChanceModifierLover>
-			<relationChanceModifierParent>2</relationChanceModifierParent>
-			<relationChanceModifierSibling>2</relationChanceModifierSibling>
-			<relationChanceModifierChild>2</relationChanceModifierChild>
-		</relationSettings>
-		<thoughtSettings>
-			<cannotReceiveThoughts>
-				<li>AteAwfulMeal</li>
-				<li>AteRawFood</li>
-				<li>SleptOnGround</li>
-				<li>SharedBed</li>
-				<li>Naked</li>
-			</cannotReceiveThoughts>
-				<butcherThoughtSpecific>
-					<li>
-						<raceList>
-							<li>Thrumkin</li>
-							<li>Thrumbo</li>
-						</raceList>
-						<thought>ButcheredHuman</thought>
-						<knowThought>KnowButcheredHuman</knowThought>
-					</li>
-				</butcherThoughtSpecific>
-				<ateThoughtSpecific>
-					<li>
-						<raceList>
-							<li>Thrumkin</li>
-							<li>Thrumbo</li>
-						</raceList>
-						<thought>AteHumanlikeMeatDirect</thought>
-						<ingredientThought>AteHumanIngredient</ingredientThought>
-					</li>
-				</ateThoughtSpecific>
-		</thoughtSettings>
-		<raceRestriction>
-			<plantList>
-				<li>Plant_TreeGhostAsh</li>
-				<li>Plant_Frostleaf</li>
-			</plantList>
-			<weaponList>
-				<li>Thrumkin_Sword</li>
-			</weaponList>
-		</raceRestriction>
-	</alienRace>
+			</graphicPaths>
+			<hairSettings>
+				<hasHair>true</hasHair>
+				<getsGreyAt>150</getsGreyAt>
+				<hairTags>
+					<li>Thrumkin</li>
+				</hairTags>
+			</hairSettings>	
+			<relationSettings>
+				<relationChanceModifierExLover>0.1</relationChanceModifierExLover>
+				<relationChanceModifierExSpouse>0.1</relationChanceModifierExSpouse>
+				<relationChanceModifierSpouse>0.1</relationChanceModifierSpouse>
+				<relationChanceModifierFiance>0.1</relationChanceModifierFiance>
+				<relationChanceModifierLover>0.1</relationChanceModifierLover>
+				<relationChanceModifierParent>2</relationChanceModifierParent>
+				<relationChanceModifierSibling>2</relationChanceModifierSibling>
+				<relationChanceModifierChild>2</relationChanceModifierChild>
+			</relationSettings>
+			<thoughtSettings>
+				<cannotReceiveThoughts>
+					<li>AteAwfulMeal</li>
+					<li>AteRawFood</li>
+					<li>SleptOnGround</li>
+					<li>SharedBed</li>
+					<li>Naked</li>
+				</cannotReceiveThoughts>
+					<butcherThoughtSpecific>
+						<li>
+							<raceList>
+								<li>Thrumkin</li>
+								<li>Thrumbo</li>
+							</raceList>
+							<thought>ButcheredHuman</thought>
+							<knowThought>KnowButcheredHuman</knowThought>
+						</li>
+					</butcherThoughtSpecific>
+					<ateThoughtSpecific>
+						<li>
+							<raceList>
+								<li>Thrumkin</li>
+								<li>Thrumbo</li>
+							</raceList>
+							<thought>AteHumanlikeMeatDirect</thought>
+							<ingredientThought>AteHumanIngredient</ingredientThought>
+						</li>
+					</ateThoughtSpecific>
+			</thoughtSettings>
+			<raceRestriction>
+				<plantList>
+					<li>Plant_TreeGhostAsh</li>
+					<li>Plant_Frostleaf</li>
+				</plantList>
+				<weaponList>
+					<li>Thrumkin_Sword</li>
+				</weaponList>
+			</raceRestriction>
+		</alienRace>
     <statBases>
-		<MarketValue>2500</MarketValue>
-		<MoveSpeed>4.6</MoveSpeed>
-	  	<Mass>80</Mass>
-		<Flammability>0.5</Flammability>
-		<ComfyTemperatureMin>6</ComfyTemperatureMin>
-		<ComfyTemperatureMax>26</ComfyTemperatureMax>
-		<LeatherAmount>75</LeatherAmount>
-		<RoyalFavorValue>6</RoyalFavorValue>
-		<CarryingCapacity>125</CarryingCapacity>
-		<MeleeHitChance>5</MeleeHitChance>
-		<IncomingDamageFactor>0.8</IncomingDamageFactor>
-		<PainShockThreshold>0.9</PainShockThreshold>
-		<ForagedNutritionPerDay>2</ForagedNutritionPerDay>
-		<TradePriceImprovement>0.7</TradePriceImprovement>
-		<NegotiationAbility>1.2</NegotiationAbility>
-		<PawnBeauty>0.5</PawnBeauty>
-		<AimingDelayFactor>1.33</AimingDelayFactor>
-		<ResearchSpeed>0.8</ResearchSpeed>
-		<DrugSynthesisSpeed>0.8</DrugSynthesisSpeed>
-		<TameAnimalChance>1.1</TameAnimalChance>
-		<TrainAnimalChance>1.1</TrainAnimalChance>
-		<AnimalGatherYield>1.2</AnimalGatherYield>
-		<PlantWorkSpeed>1.2</PlantWorkSpeed>
-		<PlantHarvestYield>1.1</PlantHarvestYield>
-		<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
-		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
-		<ArmorRating_Heat>0.20</ArmorRating_Heat>
+			<MarketValue>2500</MarketValue>
+			<MoveSpeed>4.6</MoveSpeed>
+				<Mass>80</Mass>
+			<Flammability>0.5</Flammability>
+			<ComfyTemperatureMin>6</ComfyTemperatureMin>
+			<ComfyTemperatureMax>26</ComfyTemperatureMax>
+			<LeatherAmount>75</LeatherAmount>
+			<CarryingCapacity>125</CarryingCapacity>
+			<MeleeHitChance>5</MeleeHitChance>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+			<PainShockThreshold>0.9</PainShockThreshold>
+			<ForagedNutritionPerDay>2</ForagedNutritionPerDay>
+			<TradePriceImprovement>0.7</TradePriceImprovement>
+			<NegotiationAbility>1.2</NegotiationAbility>
+			<PawnBeauty>0.5</PawnBeauty>
+			<AimingDelayFactor>1.33</AimingDelayFactor>
+			<ResearchSpeed>0.8</ResearchSpeed>
+			<DrugSynthesisSpeed>0.8</DrugSynthesisSpeed>
+			<TameAnimalChance>1.1</TameAnimalChance>
+			<TrainAnimalChance>1.1</TrainAnimalChance>
+			<AnimalGatherYield>1.2</AnimalGatherYield>
+			<PlantWorkSpeed>1.2</PlantWorkSpeed>
+			<PlantHarvestYield>1.1</PlantHarvestYield>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.20</ArmorRating_Heat>
     </statBases>
     <tools>
       <li>

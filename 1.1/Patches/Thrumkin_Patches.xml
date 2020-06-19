@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/AlienRace.ThingDef_AlienRace[defName = "Thrumkin"]/statBases</xpath>
+      <value>
+        <RoyalFavorValue>6</RoyalFavorValue>
+      </value>
+    </match>
+  </Operation>
+
 	<Operation Class="PatchOperationAdd">
 	  <xpath>Defs/FactionDef[@Name = "OutlanderFactionBase"]/pawnGroupMakers//Town_Guard/..</xpath>
 		<value>

@@ -11,6 +11,7 @@ using Verse.AI;
 using AlienRace;
 using RimWorld.SketchGen;
 using Verse.Grammar;
+using RimWorld.Planet;
 
 namespace SyrThrumkin
 {
@@ -492,6 +493,11 @@ namespace SyrThrumkin
                 pawn.Name = ThrumkinDefOf.Thrumkin_Bio_Menardy.name;
                 pawn.story.hairDef = ThrumkinDefOf.Thrumkin_Hair_3;
                 __instance.leader = pawn;
+                pawn.relations.everSeenByPlayer = true;
+                if (!Find.WorldPawns.Contains(pawn))
+                {
+                    Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
+                }
                 Current.Game.GetComponent<GameComponent_MenardySpawnable>().MenardySpawnable = false;
                 PrefixRunning = false;
                 return false;
