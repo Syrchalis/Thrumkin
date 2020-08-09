@@ -291,7 +291,7 @@ namespace SyrThrumkin
             {
                 ThingRequest thingRequest = ThingRequest.ForGroup(ThingRequestGroup.FoodSource);
                 Predicate<Thing> validator = t => !t.IsForbidden(eater.Faction) && (t.def == ThingDefOf.WoodLog || t.def == ThingDefOf.Hay);
-                Thing bestThing = GenClosest.ClosestThingReachable(getter.Position, getter.Map, thingRequest, PathEndMode.Touch, TraverseParms.For(getter), 9999f, validator);
+                Thing bestThing = GenClosest.ClosestThingReachable(getter.Position, getter.Map, thingRequest, PathEndMode.Touch, TraverseParms.For(getter), 75f, validator);
                 if (bestThing == null)
                 {
                     __result = false;
