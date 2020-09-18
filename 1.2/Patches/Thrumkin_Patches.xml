@@ -5,11 +5,21 @@
     <mods>
       <li>Royalty</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/AlienRace.ThingDef_AlienRace[defName = "Thrumkin"]/statBases</xpath>
-      <value>
-        <RoyalFavorValue>6</RoyalFavorValue>
-      </value>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName = "Thrumkin"]/statBases</xpath>
+					<value>
+						<RoyalFavorValue>6</RoyalFavorValue>
+					</value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
+          <value>
+            <li>ThrumkinPlayerTribe</li>
+          </value>
+        </li>
+      </operations>
     </match>
   </Operation>
 

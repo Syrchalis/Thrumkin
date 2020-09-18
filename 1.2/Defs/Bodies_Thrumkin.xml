@@ -137,7 +137,7 @@
               <groups>
                 <li>UpperHead</li>
                 <li>FullHead</li>
-				<li>HeadAttackTool</li>
+				        <li>HeadAttackTool</li>
               </groups>
               <parts>
                 <li>
@@ -199,13 +199,13 @@
                   <def>Nose</def>
                   <coverage>0.15</coverage>
                 </li>
-				<li>
-				  <def>HornThrumkin</def>
-				  <coverage>0.15</coverage>
-				  <groups>
-					<li>HornAttackTool</li>
-				  </groups>
-				</li>
+                <li>
+                  <def>HornThrumkin</def>
+                  <coverage>0.15</coverage>
+                  <groups>
+                  <li>HornAttackTool</li>
+                  </groups>
+                </li>
                 <li>
                   <def>Jaw</def>
                   <coverage>0.15</coverage>

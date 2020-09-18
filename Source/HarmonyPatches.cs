@@ -71,7 +71,8 @@ namespace SyrThrumkin
         {
             if (apparel?.apparel?.bodyPartGroups != null && p?.def != null)
             {
-                if (apparel.apparel.bodyPartGroups.Contains(ThrumkinDefOf.Feet) && !apparel.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs) && p.def == ThrumkinDefOf.Thrumkin)
+                if (p.def == ThrumkinDefOf.Thrumkin && apparel.apparel.bodyPartGroups.Contains(ThrumkinDefOf.Feet) 
+                    && (!apparel.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs) || !apparel.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso)))
                 {
                     __result = false;
                 }
@@ -394,7 +395,7 @@ namespace SyrThrumkin
                 {
                     if (pawn2 != pawn)
                     {
-                        if (pawn.def == ThrumkinDefOf.Thrumkin || pawn2.def == ThrumkinDefOf.Thrumkin)
+                        if ((pawn.def == ThrumkinDefOf.Thrumkin || pawn2.def == ThrumkinDefOf.Thrumkin) && pawn.ageTracker.AgeBiologicalYearsFloat >= 16f && pawn2.ageTracker.AgeBiologicalYearsFloat >= 16f)
                         {
                             __result = pawn2;
                         }
