@@ -50,11 +50,11 @@ namespace SyrThrumkin
         }
     }
 
-    [HarmonyPatch(typeof(SketchGenUtility), nameof(SketchGenUtility.IsFloorAllowed))]
+    [HarmonyPatch(typeof(SketchGenUtility), nameof(SketchGenUtility.IsFloorAllowed_NewTmp))]
     public static class IsFloorAllowedPatch
     {
         [HarmonyPostfix]
-        public static void IsFloorAllowed_Postfix(ref bool __result, TerrainDef floor, bool allowWoodenFloor, bool allowConcrete, Map useOnlyStonesAvailableOnMap, bool onlyBuildableByPlayer)
+        public static void IsFloorAllowed_Postfix(ref bool __result, TerrainDef floor, bool allowWoodenFloor)
         {
             if (!allowWoodenFloor && floor == ThrumkinDefOf.GhostAshFloor)
             {
@@ -460,13 +460,13 @@ namespace SyrThrumkin
         }
     }*/
 
-    [HarmonyPatch(typeof(Faction), nameof(Faction.GenerateNewLeader))]
-    public static class GenerateNewLeaderPatch
+    [HarmonyPatch(typeof(Faction), nameof(Faction.TryGenerateNewLeader))]
+    public static class TryGenerateNewLeaderPatch
     {
         public static bool PrefixRunning = false;
 
         [HarmonyPrefix]
-        public static bool GenerateNewLeader_Prefix(Faction __instance)
+        public static bool TryGenerateNewLeader_Prefix(Faction __instance)
         {
             bool spawnable = Current.Game.GetComponent<GameComponent_MenardySpawnable>().MenardySpawnable;
             if (spawnable && __instance?.def != null && __instance.def == ThrumkinDefOf.ThrumkinTribe && Rand.Value > 0.5f)
@@ -520,7 +520,7 @@ namespace SyrThrumkin
         {
             if (__result?.story?.childhood != null && __result?.story?.adulthood != null)
             {
-                if (!GenerateNewLeaderPatch.PrefixRunning && (__result.story.childhood == ThrumkinDefOf.Thrumkin_CBio_Menardy.backstory || __result.story.adulthood == ThrumkinDefOf.Thrumkin_ABio_Menardy.backstory))
+                if (!TryGenerateNewLeaderPatch.PrefixRunning && (__result.story.childhood == ThrumkinDefOf.Thrumkin_CBio_Menardy.backstory || __result.story.adulthood == ThrumkinDefOf.Thrumkin_ABio_Menardy.backstory))
                 {
                     return null;
                 }
