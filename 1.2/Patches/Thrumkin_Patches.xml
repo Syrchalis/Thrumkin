@@ -111,19 +111,27 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName = "WoodLog"]</xpath>
 		  <value>
-			<socialPropernessMatters>true</socialPropernessMatters>
-			<ingestible>
-			  <foodType>Tree</foodType>
-			  <maxNumToIngestAtOnce>30</maxNumToIngestAtOnce>
-			  <optimalityOffsetHumanlikes>-25</optimalityOffsetHumanlikes>
-			  <ingestEffect>EatVegetarian</ingestEffect>
-			  <ingestSound>RawVegetable_Eat</ingestSound>
-			  <preferability>RawBad</preferability>
-			  <baseIngestTicks>1200</baseIngestTicks>
-			  <specialThoughtDirect>AteWood</specialThoughtDirect>
-			</ingestible>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <ingestible>
+          <foodType>Tree</foodType>
+          <maxNumToIngestAtOnce>30</maxNumToIngestAtOnce>
+          <optimalityOffsetHumanlikes>-25</optimalityOffsetHumanlikes>
+          <ingestEffect>EatVegetarian</ingestEffect>
+          <ingestSound>RawVegetable_Eat</ingestSound>
+          <preferability>RawBad</preferability>
+          <baseIngestTicks>1200</baseIngestTicks>
+          <specialThoughtDirect>AteWood</specialThoughtDirect>
+        </ingestible>
 		  </value>
 	</Operation>
+
+  <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "WoodLog"]/thingCategories</xpath>
+		  <value>
+        <li>Foods</li>
+		  </value>
+	</Operation>
+
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName = "WoodLog"]/statBases</xpath>

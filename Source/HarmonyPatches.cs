@@ -286,12 +286,13 @@ namespace SyrThrumkin
     public class TryFindBestFoodSourceForPatch
     {
         [HarmonyPostfix]
-        public static void TryFindBestFoodSourceFor_Postfix(ref bool __result, Pawn getter, Pawn eater, bool desperate, ref Thing foodSource, ref ThingDef foodDef)
+        public static void TryFindBestFoodSourceFor_Postfix(ref bool __result, Pawn getter, Pawn eater, bool desperate, ref Thing foodSource, ref ThingDef foodDef, bool allowForbidden, bool allowSociallyImproper, bool ignoreReservations)
         {
-            if (foodSource == null && foodDef == null && eater?.def != null && eater.def == ThrumkinDefOf.Thrumkin)
+            if (foodSource == null && foodDef == null && eater?.def != null && eater.def == ThrumkinDefOf.Thrumkin && eater.needs.food.CurCategory >= HungerCategory.UrgentlyHungry)
             {
                 ThingRequest thingRequest = ThingRequest.ForGroup(ThingRequestGroup.FoodSource);
-                Predicate<Thing> validator = t => !t.IsForbidden(eater.Faction) && (t.def == ThingDefOf.WoodLog || t.def == ThingDefOf.Hay);
+                Predicate<Thing> validator = t => (t.def == ThingDefOf.WoodLog || t.def == ThingDefOf.Hay) && (!t.IsForbidden(eater) || allowForbidden) && eater.WillEat(t, getter, true) && t.IngestibleNow 
+                && (t.IsSociallyProper(getter) || t.IsSociallyProper(eater, eater.IsPrisonerOfColony) || allowSociallyImproper) && (getter.CanReserve(t, 10) || ignoreReservations);
                 Thing bestThing = GenClosest.ClosestThingReachable(getter.Position, getter.Map, thingRequest, PathEndMode.Touch, TraverseParms.For(getter), 75f, validator);
                 if (bestThing == null)
                 {
