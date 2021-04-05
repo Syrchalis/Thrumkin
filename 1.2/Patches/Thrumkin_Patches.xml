@@ -23,6 +23,44 @@
     </match>
   </Operation>
 
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+				<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			<!-- Guests -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_IsSet"]/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+					<value>
+						<li>
+							<factionDef>ThrumkinTribe</factionDef>
+							<pawnKinds>
+								<li>Thrumkin_Penitent</li>
+								<li>Thrumkin_Archer</li>
+								<li>Thrumkin_Warrior</li>
+							</pawnKinds>
+						</li>  
+					</value>
+				</li>
+				<!-- Mercenaries -->
+				<li Class="PatchOperationAdd">
+						<xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+					<value>
+						<li>
+							<factionDef>ThrumkinTribe</factionDef>
+							<pawnKinds>
+								<li>Thrumkin_Penitent</li>
+								<li>Thrumkin_Archer</li>
+								<li>Thrumkin_Warrior</li>
+							</pawnKinds>
+						</li>  
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
 	  <xpath>Defs/FactionDef[@Name = "OutlanderFactionBase"]/pawnGroupMakers//Town_Guard/..</xpath>
 		<value>
