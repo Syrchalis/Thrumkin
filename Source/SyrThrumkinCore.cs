@@ -32,6 +32,7 @@ namespace SyrThrumkin
                 listing_Standard.Begin(inRect);
                 listing_Standard.CheckboxLabeled("SyrThrumkin_useUnsupportedHair".Translate(), ref SyrThrumkinSettings.useUnsupportedHair, "SyrThrumkin_useUnsupportedHairTooltip".Translate());
                 listing_Standard.CheckboxLabeled("SyrThrumkin_useStandardAI".Translate(), ref SyrThrumkinSettings.useStandardAI, "SyrThrumkin_useStandardAITooltip".Translate());
+                listing_Standard.CheckboxLabeled("SyrThrumkin_manualWoodConsumption".Translate(), ref SyrThrumkinSettings.manualWoodConsumption, "SyrThrumkin_manualWoodConsumptionTooltip".Translate());
                 listing_Standard.Gap(24f);
                 if (listing_Standard.ButtonText("SyrThrumkin_defaultSettings".Translate(), "SyrThrumkin_defaultSettingsTooltip".Translate()))
                 {

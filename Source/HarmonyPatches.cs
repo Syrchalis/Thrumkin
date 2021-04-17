@@ -288,7 +288,7 @@ namespace SyrThrumkin
         [HarmonyPostfix]
         public static void TryFindBestFoodSourceFor_Postfix(ref bool __result, Pawn getter, Pawn eater, bool desperate, ref Thing foodSource, ref ThingDef foodDef, bool allowForbidden, bool allowSociallyImproper, bool ignoreReservations)
         {
-            if (foodSource == null && foodDef == null && eater?.def != null && eater.def == ThrumkinDefOf.Thrumkin && eater.needs.food.CurCategory >= HungerCategory.UrgentlyHungry)
+            if (!SyrThrumkinSettings.manualWoodConsumption && foodSource == null && foodDef == null && eater?.def != null && eater.def == ThrumkinDefOf.Thrumkin && eater.needs.food.CurCategory >= HungerCategory.UrgentlyHungry)
             {
                 ThingRequest thingRequest = ThingRequest.ForGroup(ThingRequestGroup.FoodSource);
                 Predicate<Thing> validator = t => (t.def == ThingDefOf.WoodLog || t.def == ThingDefOf.Hay) && (!t.IsForbidden(eater) || allowForbidden) && eater.WillEat(t, getter, true) && t.IngestibleNow 

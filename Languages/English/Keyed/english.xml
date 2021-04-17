@@ -6,9 +6,11 @@
 	<SyrThrumkinSettingsCategory>Thrumkin</SyrThrumkinSettingsCategory>
 	<SyrThrumkin_useUnsupportedHair>Use unsupported hair</SyrThrumkin_useUnsupportedHair>
 	<SyrThrumkin_useUnsupportedHairTooltip>Allows thrumkin to spawn with any style of hair instead of just with their own hair styles.</SyrThrumkin_useUnsupportedHairTooltip>
-	<SyrThrumkin_useStandardAI>Use standard AI to look for food</SyrThrumkin_useStandardAI>
-	<SyrThrumkin_useStandardAITooltip>Will disable the advanced AI looking for nutritious food and instead make thrumkin look for food like humans - can fix issues with food AI.</SyrThrumkin_useStandardAITooltip>
-	<SyrThrumkin_defaultSettings>Reset to default</SyrThrumkin_defaultSettings>
+	<SyrThrumkin_useStandardAI>Disable advanced food AI</SyrThrumkin_useStandardAI>
+	<SyrThrumkin_useStandardAITooltip>Advanced food AI will make Thrumkin correctly prioritize food based on how much nutrition it has for them.</SyrThrumkin_useStandardAITooltip>
+	<SyrThrumkin_manualWoodConsumption>Manual wood consumption</SyrThrumkin_manualWoodConsumption>
+  <SyrThrumkin_manualWoodConsumptionTooltip>Thrumkin will not automatically eat wood when urgently hungry, instead you have to order them to eat it</SyrThrumkin_manualWoodConsumptionTooltip>
+  <SyrThrumkin_defaultSettings>Reset to default</SyrThrumkin_defaultSettings>
 	<SyrThrumkin_defaultSettingsTooltip>Reset settings to default values</SyrThrumkin_defaultSettingsTooltip>
 
 	<ThrumkinThrumboTameSuccess>{0} successfully tamed {1} with the help of their natural similarity.</ThrumkinThrumboTameSuccess>
