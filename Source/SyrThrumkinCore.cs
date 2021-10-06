@@ -30,13 +30,13 @@ namespace SyrThrumkin
             {
                 Listing_Standard listing_Standard = new Listing_Standard();
                 listing_Standard.Begin(inRect);
-                listing_Standard.CheckboxLabeled("SyrThrumkin_useUnsupportedHair".Translate(), ref SyrThrumkinSettings.useUnsupportedHair, "SyrThrumkin_useUnsupportedHairTooltip".Translate());
+                //listing_Standard.CheckboxLabeled("SyrThrumkin_useUnsupportedHair".Translate(), ref SyrThrumkinSettings.useUnsupportedHair, "SyrThrumkin_useUnsupportedHairTooltip".Translate());
                 listing_Standard.CheckboxLabeled("SyrThrumkin_useStandardAI".Translate(), ref SyrThrumkinSettings.useStandardAI, "SyrThrumkin_useStandardAITooltip".Translate());
                 listing_Standard.CheckboxLabeled("SyrThrumkin_manualWoodConsumption".Translate(), ref SyrThrumkinSettings.manualWoodConsumption, "SyrThrumkin_manualWoodConsumptionTooltip".Translate());
                 listing_Standard.Gap(24f);
                 if (listing_Standard.ButtonText("SyrThrumkin_defaultSettings".Translate(), "SyrThrumkin_defaultSettingsTooltip".Translate()))
                 {
-                    SyrThrumkinSettings.useUnsupportedHair = false;
+                    //SyrThrumkinSettings.useUnsupportedHair = false;
                     SyrThrumkinSettings.useStandardAI = false;
                 }
                 listing_Standard.End();
@@ -51,7 +51,7 @@ namespace SyrThrumkin
 
         public static void ApplySettings()
         {
-            if (SyrThrumkinSettings.useUnsupportedHair)
+            /*if (SyrThrumkinSettings.useUnsupportedHair)
             {
                 ThingDef_AlienRace thrumkin = ThrumkinDefOf.Thrumkin as ThingDef_AlienRace;
                 thrumkin.alienRace.hairSettings.hairTags.Add("Tribal");
@@ -64,7 +64,7 @@ namespace SyrThrumkin
                 ThingDef_AlienRace thrumkin = ThrumkinDefOf.Thrumkin as ThingDef_AlienRace;
                 thrumkin.alienRace.hairSettings.hairTags.Clear();
                 thrumkin.alienRace.hairSettings.hairTags.Add("Thrumkin");
-            }
+            }*/
         }
     }
 }

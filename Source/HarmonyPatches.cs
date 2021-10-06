@@ -50,7 +50,7 @@ namespace SyrThrumkin
         }
     }
 
-    [HarmonyPatch(typeof(SketchGenUtility), nameof(SketchGenUtility.IsFloorAllowed_NewTmp))]
+    [HarmonyPatch(typeof(SketchGenUtility), nameof(SketchGenUtility.IsFloorAllowed))]
     public static class IsFloorAllowedPatch
     {
         [HarmonyPostfix]
@@ -475,7 +475,7 @@ namespace SyrThrumkin
                 __instance.leader = null;
                 PrefixRunning = true;
                 PawnGenerationRequest request = new PawnGenerationRequest(ThrumkinDefOf.Thrumkin_ElderMelee, __instance, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, true, 1f,
-                    false, true, true, false, false, false, false, false, 0, null, 1, null, null, null, null, null, null, null, Gender.Female, null, null, null, null);
+                    false, true, true, false, false, false, false, false, 0, 0, null, 1, null, null, null, null, null, 27f, 27f, Gender.Female, null, null, null, null);
                 Pawn pawn;
                 int i = 0;
                 do
@@ -568,7 +568,7 @@ namespace SyrThrumkin
             {
                 if (Rand.Chance(0.25f))
                 {
-                    InteractionWorker_RecruitAttempt.DoRecruit(initiator, recipient, 0.25f, false);
+                    InteractionWorker_RecruitAttempt.DoRecruit(initiator, recipient, false);
                     string text = recipient.KindLabelIndefinite();
                     if (recipient.Name != null)
                     {

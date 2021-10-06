@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>ThrumkinPlayerTribe</defName>
+    <label>New Thrumkin Tribe</label>
+    <description>A small Thrumkin tribe.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>Thrumkin_Tribesperson</basicMemberKind>
+    <pawnSingular>tribesperson</pawnSingular>
+    <pawnsPlural>tribespeople</pawnsPlural>
+    <techLevel>Neolithic</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Tribal</li>
+          <li>Thrumkin</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/ThrumkinBase</factionIconPath>
+    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+    <factionNameMaker>NamerFactionThrumkin</factionNameMaker>
+    <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+    <geneticVariance>1</geneticVariance>
+    <startingResearchTags>
+      <li>TribalStart</li>
+    </startingResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
+	  <recipePrerequisiteTags>
+      <li>Tribal</li>
+    </recipePrerequisiteTags>
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
+    </disallowedPrecepts>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase" Name="ThrumkinTribeBase" Abstract="True">
+    <pawnSingular>tribesperson</pawnSingular>
+    <pawnsPlural>tribespeople</pawnsPlural>
+    <listOrderPriority>11</listOrderPriority>
+    <settlementGenerationWeight>0.5</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+		<geneticVariance>0.1</geneticVariance>
+    <factionNameMaker>NamerFactionThrumkin</factionNameMaker>
+    <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+    <techLevel>Neolithic</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Thrumkin</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/ThrumkinBase</factionIconPath>
+    <leaderTitle>elder</leaderTitle>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1)</li> <!--Constant 1 at all points levels-->
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_Thrumkin_BulkGoods</li>
+      <li>Caravan_Neolithic_Thrumkin_WarMerchant</li>
+			<li>Caravan_Neolithic_Thrumkin_Shaman</li>
+		</caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Thrumkin</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Thrumkin</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>
+      <min>-40</min>
+      <max>45</max>
+    </allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(140, 70)</li>
+        <li>(800, 130)</li>
+        <li>(1300, 155)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Thrumkin_Penitent>5</Thrumkin_Penitent>
+          <Thrumkin_Warrior>10</Thrumkin_Warrior>
+          <Thrumkin_Archer>5</Thrumkin_Archer>
+          <Thrumkin_Hunter>5</Thrumkin_Hunter>
+          <Thrumkin_HeavyArcher>5</Thrumkin_HeavyArcher>
+          <Thrumkin_Berserker>10</Thrumkin_Berserker>
+          <Thrumkin_ElderMelee>3</Thrumkin_ElderMelee>
+          <Thrumkin_ElderRanged>1.5</Thrumkin_ElderRanged>
+          <Thrumkin_GrandElder>1</Thrumkin_GrandElder>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee only -->
+        <kindDef>Combat</kindDef>
+        <commonality>60</commonality>
+        <options>
+          <Thrumkin_Penitent>10</Thrumkin_Penitent>
+          <Thrumkin_Warrior>10</Thrumkin_Warrior>
+          <Thrumkin_Berserker>10</Thrumkin_Berserker>
+          <Thrumkin_ElderMelee>5</Thrumkin_ElderMelee>
+          <Thrumkin_GrandElder>1</Thrumkin_GrandElder>
+      </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Thrumkin_Warrior>20</Thrumkin_Warrior>
+          <Thrumkin_Archer>5</Thrumkin_Archer>
+          <Thrumkin_Hunter>5</Thrumkin_Hunter>
+          <Thrumkin_HeavyArcher>5</Thrumkin_HeavyArcher>
+          <Thrumkin_Berserker>10</Thrumkin_Berserker>
+          <Thrumkin_ElderMelee>3</Thrumkin_ElderMelee>
+          <Thrumkin_ElderRanged>1.5</Thrumkin_ElderRanged>
+          <Thrumkin_GrandElder>1</Thrumkin_GrandElder>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Thrumkin_Trader>1</Thrumkin_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>7</Muffalo>
+          <Horse>3</Horse>
+          <Bison>3</Bison>
+          <Elephant>1</Elephant>
+        </carriers>
+        <guards>
+          <Thrumkin_Warrior>15</Thrumkin_Warrior>
+          <Thrumkin_Archer>5</Thrumkin_Archer>
+          <Thrumkin_Hunter>5</Thrumkin_Hunter>
+          <Thrumkin_HeavyArcher>5</Thrumkin_HeavyArcher>
+          <Thrumkin_Berserker>10</Thrumkin_Berserker>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Thrumkin_Warrior>15</Thrumkin_Warrior>
+          <Thrumkin_Archer>5</Thrumkin_Archer>
+          <Thrumkin_Hunter>5</Thrumkin_Hunter>
+          <Thrumkin_HeavyArcher>5</Thrumkin_HeavyArcher>
+          <Thrumkin_Berserker>10</Thrumkin_Berserker>
+          <Thrumkin_ElderMelee>10</Thrumkin_ElderMelee>
+          <Thrumkin_GrandElder>1</Thrumkin_GrandElder>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
+  </FactionDef>
+
+  <FactionDef ParentName="ThrumkinTribeBase">
+    <defName>ThrumkinTribe</defName>
+    <label>thrumkin tribe</label>
+    <description>Scattered thrumkin tribes.</description>
+    <colorSpectrum>
+      <li>(1, 1, 1)</li>
+    </colorSpectrum>
+  </FactionDef>
+
+  <RulePackDef>
+    <defName>NamerFactionThrumkin</defName>
+    <include>
+      <li>TribalWordUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->The [Color] [thrumkin_part]</li>
+        <li>r_name->The [WordTribal] [thrumkin_part]</li>
+        <li>r_name->The [thrumkin_part] [thrumkin_union]</li>
+        <li>r_name->[thrumkin_union] of [thrumkin_part_plural]</li>
+        <li>r_name->The [Animal] [thrumkin_part_plural]</li>
+        <li>r_name->The [TerrainFeature] [thrumkin_part_plural]</li>
+        <li>r_name->The [thrumkin_part_plural] of the [TerrainFeature]</li>
+        <li>r_name->The [Vegetables] Tribe</li>
+        <li>r_name(p=2)->[thrumkin_union] of the [TerrainFeature]</li>
+        <li>r_name->[AdjectiveCurious] [thrumkin_union]</li>
+        <li>r_name->[AdjectiveFriendly] [thrumkin_union]</li>
+        <li>r_name(p=2)->[AdjectiveCurious] [thrumkin_part]</li>
+        <li>r_name(p=2)->[AdjectiveFriendly] [thrumkin_part]</li>
+
+        <li>thrumkin_part(p=2)->hoof</li>
+        <li>thrumkin_part(p=2)->hooves</li>
+        <li>thrumkin_part(p=2)->horn</li>
+        <li>thrumkin_part(p=2)->horns</li>
+        <li>thrumkin_part->pelt</li>
+        <li>thrumkin_part->pelts</li>
+        <li>thrumkin_part->tail</li>
+        <li>thrumkin_part->tails</li>
+
+        <li>thrumkin_part_plural(p=2)->hooves</li>
+        <li>thrumkin_part_plural(p=2)->horns</li>
+        <li>thrumkin_part_plural->pelts</li>
+        <li>thrumkin_part_plural->tails</li>
+
+        <li>thrumkin_union->union</li>
+        <li>thrumkin_union->nation</li>
+        <li>thrumkin_union->kinship</li>
+        <li>thrumkin_union->tribe</li>
+        <li>thrumkin_union->alliance</li>
+        <li>thrumkin_union->covenant</li>
+        <li>thrumkin_union->treaty</li>
+        <li>thrumkin_union->pact</li>
+        <li>thrumkin_union->coalition</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

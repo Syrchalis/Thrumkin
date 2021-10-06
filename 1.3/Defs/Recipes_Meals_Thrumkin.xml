@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="CookMealBase_Thrumkin" Abstract="True">
+    <fixedIngredientFilter>
+      <categories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase_Thrumkin">
+    <defName>CookMealSimple_Thrumkin</defName>
+    <label>cook simple meal (vegetables)</label>
+    <description>Cook a straightforward meal from one ingredient.</description>
+    <jobString>Cooking simple meal (vegetables).</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple_Thrumkin>1</MealSimple_Thrumkin>
+    </products>
+    <workSkill>Cooking</workSkill>
+    <recipeUsers>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+<RecipeDef ParentName="CookMealBase_Thrumkin">
+    <defName>CookMealSimpleBulk_Thrumkin</defName>
+    <label>cook simple meal (vegetables) x4</label>
+    <description>Cook 4 straightforward meals from one ingredient.</description>
+    <jobString>Cooking 4 simple meals (vegetables).</jobString>
+    <workAmount>960</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>2.0</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple_Thrumkin>4</MealSimple_Thrumkin>
+    </products>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase_Thrumkin">
+    <defName>CookMealFine_Thrumkin</defName>
+    <label>cook fine meal (vegetables)</label>
+    <description>Cook a somewhat complex meal from a combination of meat and plant ingredients.</description>
+    <jobString>Cooking fine meal (vegetables).</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>0.3</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>0.2</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealFine_Thrumkin>1</MealFine_Thrumkin>
+    </products>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase_Thrumkin">
+    <defName>CookMealFineBulk_Thrumkin</defName>
+    <label>cook fine meal (vegetables) x4</label>
+    <description>Cook 4 somewhat complex meals from a combination of meat and plant ingredients.</description>
+    <jobString>Cooking 4 fine meals (vegetables).</jobString>
+    <workAmount>1440</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>1.2</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>0.8</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealFine_Thrumkin>4</MealFine_Thrumkin>
+    </products>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+
+</Defs>

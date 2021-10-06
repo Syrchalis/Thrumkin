@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HairDef>
+    <defName>Thrumkin_Hair_0</defName>
+    <label>thrumkin_wild</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_0</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+  
+  <HairDef>
+    <defName>Thrumkin_Hair_1</defName>
+    <label>thrumkin_tame</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_1</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>Thrumkin_Hair_2</defName>
+    <label>thrumkin_short</label>
+    <hairGender>Male</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_2</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>Thrumkin_Hair_3</defName>
+    <label>thrumkin_braid</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_3</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>Thrumkin_Hair_4</defName>
+    <label>thrumkin_braids</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_4</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>Thrumkin_Hair_5</defName>
+    <label>thrumkin_long</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Thrumkin/Hairs/Hair_5</texPath>
+    <category>Tribal</category>
+		<styleTags>
+			<li>Thrumkin</li>
+		</styleTags>
+  </HairDef>
+
+</Defs>

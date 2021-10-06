@@ -47,27 +47,29 @@ namespace SyrThrumkin
                 });
                 GenSpawn.Spawn(part.def.spawnThingOnRemoved, billDoer.Position, billDoer.Map, WipeMode.Vanish);
             }
-            DamageDef surgicalCut = ThrumkinDefOf.SurgicalCutSpecial;
-            float amount = 99999f;
-            float armorPenetration = 999f;
-            pawn.TakeDamage(new DamageInfo(surgicalCut, amount, armorPenetration, -1f, null, part, null, DamageInfo.SourceCategory.ThingOrUnknown, null));
-            if (!flag)
+            DamagePart(pawn, part);
+            if (flag)
             {
-                if (pawn.Dead)
-                {
-                    ThoughtUtility.GiveThoughtsForPawnExecuted(pawn, PawnExecutionKind.OrganHarvesting);
-                }
-                GiveThoughtsForPawnHornHarvested(pawn);
+                ApplyThoughts(pawn, billDoer);
             }
-            if (flag2 && pawn.Faction != null && billDoer != null && billDoer.Faction != null)
+            if (flag2)
             {
-                Faction faction = pawn.Faction;
-                Faction faction2 = billDoer.Faction;
-                int goodwillChange = -15;
-                string reason = "GoodwillChangedReason_RemovedBodyPart".Translate(part.LabelShort);
-                GlobalTargetInfo? lookTarget = new GlobalTargetInfo?(pawn);
-                faction.TryAffectGoodwillWith(faction2, goodwillChange, true, true, reason, lookTarget);
+                ReportViolation(pawn, billDoer, pawn.HomeFaction, -70);
             }
+        }
+
+        public virtual void DamagePart(Pawn pawn, BodyPartRecord part)
+        {
+            pawn.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, 99999f, 999f, -1f, null, part, null, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true));
+        }
+        public virtual void ApplyThoughts(Pawn pawn, Pawn billDoer)
+        {
+            if (pawn.Dead)
+            {
+                ThoughtUtility.GiveThoughtsForPawnExecuted(pawn, billDoer, PawnExecutionKind.OrganHarvesting);
+                return;
+            }
+            ThoughtUtility.GiveThoughtsForPawnOrganHarvested(pawn, billDoer);
         }
 
         public override string GetLabelWhenUsedOn(Pawn pawn, BodyPartRecord part)
