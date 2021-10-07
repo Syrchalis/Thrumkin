@@ -42,10 +42,6 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
     </disallowedMemes>
-    <disallowedPrecepts>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
-    </disallowedPrecepts>
   </FactionDef>
 
   <FactionDef ParentName="FactionBase" Name="ThrumkinTribeBase" Abstract="True">
@@ -174,6 +170,10 @@
       </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </disallowedMemes>
   </FactionDef>
 
   <FactionDef ParentName="ThrumkinTribeBase">
