@@ -42,6 +42,11 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
     </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Disapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Abhorrent</li>
+    </disallowedPrecepts>
   </FactionDef>
 
   <FactionDef ParentName="FactionBase" Name="ThrumkinTribeBase" Abstract="True">
@@ -174,6 +179,11 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
     </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Disapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating_NonMeat_Abhorrent</li>
+    </disallowedPrecepts>
   </FactionDef>
 
   <FactionDef ParentName="ThrumkinTribeBase">
