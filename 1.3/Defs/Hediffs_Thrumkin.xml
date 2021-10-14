@@ -35,20 +35,20 @@
   <HediffDef>
     <defName>AteFrostLeaves</defName>
     <label>frostleaves</label>
-    <description>Positive effects from eating frostleaves.</description>
+    <description>Soothing effects from eating frostleaves.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.3,0.8,0.9)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-1</severityPerDay>
+        <severityPerDay>-2</severityPerDay>
       </li>
     </comps>
     <stages>
       <li>
         <statOffsets>
-          <MentalBreakThreshold>-0.09</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
         </statOffsets>
       </li>
     </stages>

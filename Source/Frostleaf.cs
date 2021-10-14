@@ -30,18 +30,17 @@ namespace SyrThrumkin
         {
             get
             {
-                float num;
-                if (!GenTemperature.TryGetTemperatureForCell(Position, Map, out num))
+                if (!GenTemperature.TryGetTemperatureForCell(Position, Map, out float num))
                 {
                     return 1f;
                 }
-                if (num < -10f)
+                if (num < -15f)
                 {
-                    return Mathf.InverseLerp(-50f, -10f, num);
+                    return Mathf.InverseLerp(-35f, -15f, num);
                 }
-                if (num > 42f)
+                if (num > 15f)
                 {
-                    return Mathf.InverseLerp(58f, 42f, num);
+                    return Mathf.InverseLerp(25f, 15f, num);
                 }
                 return 1f;
                 
