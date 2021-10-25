@@ -43,6 +43,7 @@
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-2</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
       </li>
     </comps>
     <stages>
